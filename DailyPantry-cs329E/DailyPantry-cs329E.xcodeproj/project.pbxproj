@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84188D992903394400F0BECD /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84188D982903394400F0BECD /* CalendarViewController.swift */; };
+		848CBDC329033605003362B5 /* CalendarKit in Frameworks */ = {isa = PBXBuildFile; productRef = 848CBDC229033605003362B5 /* CalendarKit */; };
 		84B9982828FC857300160DD8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 84B9982728FC857300160DD8 /* FirebaseAuth */; };
 		84B9982B28FC85AC00160DD8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B9982A28FC85AC00160DD8 /* GoogleService-Info.plist */; };
 		84FAE1F128F9E6CA00BD4F64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAE1F028F9E6CA00BD4F64 /* AppDelegate.swift */; };
 		84FAE1F328F9E6CA00BD4F64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAE1F228F9E6CA00BD4F64 /* SceneDelegate.swift */; };
-		84FAE1F528F9E6CA00BD4F64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAE1F428F9E6CA00BD4F64 /* ViewController.swift */; };
+		84FAE1F528F9E6CA00BD4F64 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAE1F428F9E6CA00BD4F64 /* LoginViewController.swift */; };
 		84FAE1F828F9E6CA00BD4F64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FAE1F628F9E6CA00BD4F64 /* Main.storyboard */; };
 		84FAE1FB28F9E6CA00BD4F64 /* DailyPantry_cs329E.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84FAE1F928F9E6CA00BD4F64 /* DailyPantry_cs329E.xcdatamodeld */; };
 		84FAE1FD28F9E6CB00BD4F64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84FAE1FC28F9E6CB00BD4F64 /* Assets.xcassets */; };
@@ -19,12 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84188D982903394400F0BECD /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		84B9982A28FC85AC00160DD8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84B9982D28FC877C00160DD8 /* DailyPantry-cs329E.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DailyPantry-cs329E.entitlements"; sourceTree = "<group>"; };
 		84FAE1ED28F9E6CA00BD4F64 /* DailyPantry-cs329E.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DailyPantry-cs329E.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FAE1F028F9E6CA00BD4F64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84FAE1F228F9E6CA00BD4F64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		84FAE1F428F9E6CA00BD4F64 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84FAE1F428F9E6CA00BD4F64 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		84FAE1F728F9E6CA00BD4F64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84FAE1FA28F9E6CA00BD4F64 /* DailyPantry_cs329E.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DailyPantry_cs329E.xcdatamodel; sourceTree = "<group>"; };
 		84FAE1FC28F9E6CB00BD4F64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +41,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84B9982828FC857300160DD8 /* FirebaseAuth in Frameworks */,
+				848CBDC329033605003362B5 /* CalendarKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,7 +70,8 @@
 				84B9982D28FC877C00160DD8 /* DailyPantry-cs329E.entitlements */,
 				84FAE1F028F9E6CA00BD4F64 /* AppDelegate.swift */,
 				84FAE1F228F9E6CA00BD4F64 /* SceneDelegate.swift */,
-				84FAE1F428F9E6CA00BD4F64 /* ViewController.swift */,
+				84FAE1F428F9E6CA00BD4F64 /* LoginViewController.swift */,
+				84188D982903394400F0BECD /* CalendarViewController.swift */,
 				84FAE1F628F9E6CA00BD4F64 /* Main.storyboard */,
 				84FAE1FC28F9E6CB00BD4F64 /* Assets.xcassets */,
 				84FAE1FE28F9E6CB00BD4F64 /* LaunchScreen.storyboard */,
@@ -95,6 +100,7 @@
 			name = "DailyPantry-cs329E";
 			packageProductDependencies = (
 				84B9982728FC857300160DD8 /* FirebaseAuth */,
+				848CBDC229033605003362B5 /* CalendarKit */,
 			);
 			productName = "DailyPantry-cs329E";
 			productReference = 84FAE1ED28F9E6CA00BD4F64 /* DailyPantry-cs329E.app */;
@@ -125,6 +131,7 @@
 			mainGroup = 84FAE1E428F9E6CA00BD4F64;
 			packageReferences = (
 				84B9982628FC857300160DD8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				848CBDC129033604003362B5 /* XCRemoteSwiftPackageReference "CalendarKit" */,
 			);
 			productRefGroup = 84FAE1EE28F9E6CA00BD4F64 /* Products */;
 			projectDirPath = "";
@@ -154,8 +161,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84188D992903394400F0BECD /* CalendarViewController.swift in Sources */,
 				84FAE1FB28F9E6CA00BD4F64 /* DailyPantry_cs329E.xcdatamodeld in Sources */,
-				84FAE1F528F9E6CA00BD4F64 /* ViewController.swift in Sources */,
+				84FAE1F528F9E6CA00BD4F64 /* LoginViewController.swift in Sources */,
 				84FAE1F128F9E6CA00BD4F64 /* AppDelegate.swift in Sources */,
 				84FAE1F328F9E6CA00BD4F64 /* SceneDelegate.swift in Sources */,
 			);
@@ -363,6 +371,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		848CBDC129033604003362B5 /* XCRemoteSwiftPackageReference "CalendarKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/richardtop/CalendarKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.6;
+			};
+		};
 		84B9982628FC857300160DD8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -374,6 +390,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		848CBDC229033605003362B5 /* CalendarKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 848CBDC129033604003362B5 /* XCRemoteSwiftPackageReference "CalendarKit" */;
+			productName = CalendarKit;
+		};
 		84B9982728FC857300160DD8 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 84B9982628FC857300160DD8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

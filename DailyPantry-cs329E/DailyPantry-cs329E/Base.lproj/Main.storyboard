@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DXf-NF-qEU">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DailyPantry_cs329E" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="DailyPantry_cs329E" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,12 +83,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logo for app here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gZ-f8-enS">
+                                <rect key="frame" x="146.66666666666666" y="203" width="134.99999999999997" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="m7S-X0-Ek1" firstAttribute="top" secondItem="GC8-Ll-XwQ" secondAttribute="bottom" constant="71" id="2Hb-Yd-xh5"/>
                             <constraint firstItem="GC8-Ll-XwQ" firstAttribute="leading" secondItem="Qbi-Pg-yJ4" secondAttribute="trailing" constant="78" id="5aZ-fr-wmY"/>
+                            <constraint firstItem="9gZ-f8-enS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Br-ea-5m2"/>
                             <constraint firstItem="GC8-Ll-XwQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="489" id="6yy-KL-H2K"/>
                             <constraint firstItem="GC8-Ll-XwQ" firstAttribute="top" secondItem="guB-58-Ksh" secondAttribute="bottom" constant="430" id="7fK-8G-Vkg"/>
                             <constraint firstItem="b21-Lq-nri" firstAttribute="leading" secondItem="Qbi-Pg-yJ4" secondAttribute="trailing" constant="17" id="AGk-py-rQq"/>
@@ -99,6 +106,7 @@
                             <constraint firstItem="GC8-Ll-XwQ" firstAttribute="top" secondItem="b21-Lq-nri" secondAttribute="bottom" constant="74" id="VTT-9I-GlQ"/>
                             <constraint firstItem="GC8-Ll-XwQ" firstAttribute="top" secondItem="ftt-Yl-fak" secondAttribute="bottom" constant="128" id="aQ0-GP-P9h"/>
                             <constraint firstItem="GC8-Ll-XwQ" firstAttribute="top" secondItem="jpo-Dd-j68" secondAttribute="bottom" constant="134" id="dZB-N6-Vep"/>
+                            <constraint firstItem="GC8-Ll-XwQ" firstAttribute="top" secondItem="9gZ-f8-enS" secondAttribute="bottom" constant="309" id="e3R-JB-Miv"/>
                             <constraint firstItem="GC8-Ll-XwQ" firstAttribute="leading" secondItem="jpo-Dd-j68" secondAttribute="trailing" constant="78" id="f4e-aj-Emv"/>
                             <constraint firstItem="m7S-X0-Ek1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gbb-Yr-Bs9"/>
                             <constraint firstItem="S3G-kp-l6j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rEK-vA-Seo"/>
@@ -117,8 +125,47 @@
             </objects>
             <point key="canvasLocation" x="138.78504672897196" y="77.753779697624196"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8HH-2Q-Tvl">
+            <objects>
+                <navigationController id="DXf-NF-qEU" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gl6-az-MSg">
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="tyV-MC-yCC" kind="relationship" relationship="rootViewController" id="6Be-jw-2l8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ras-Ct-PVy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="969" y="78"/>
+        </scene>
+        <!--Daily Pantry-->
+        <scene sceneID="oZM-ux-yXy">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iVz-Ya-GKw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="tyV-MC-yCC" customClass="CalendarViewController" customModule="DailyPantry_cs329E" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MD9-JL-zwE">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="hPb-OY-M3r"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Daily Pantry" id="y9U-Zd-4fM">
+                        <leftBarButtonItems>
+                            <barButtonItem title="Item" image="gearshape.fill" catalog="system" id="UrL-Jt-H63"/>
+                            <barButtonItem title="Recipe Book" id="iiL-pO-Dwp"/>
+                        </leftBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Pantry" id="p2c-H5-IL1"/>
+                    </navigationItem>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1762" y="78"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
