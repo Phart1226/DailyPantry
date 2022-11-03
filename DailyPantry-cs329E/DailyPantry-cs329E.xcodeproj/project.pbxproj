@@ -11,6 +11,7 @@
 		848CBDC329033605003362B5 /* CalendarKit in Frameworks */ = {isa = PBXBuildFile; productRef = 848CBDC229033605003362B5 /* CalendarKit */; };
 		84B9982828FC857300160DD8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 84B9982728FC857300160DD8 /* FirebaseAuth */; };
 		84B9982B28FC85AC00160DD8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B9982A28FC85AC00160DD8 /* GoogleService-Info.plist */; };
+		84D033F0291434C500DB0838 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 84D033EF291434C500DB0838 /* FSCalendar */; };
 		84FAE1F128F9E6CA00BD4F64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAE1F028F9E6CA00BD4F64 /* AppDelegate.swift */; };
 		84FAE1F328F9E6CA00BD4F64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAE1F228F9E6CA00BD4F64 /* SceneDelegate.swift */; };
 		84FAE1F528F9E6CA00BD4F64 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAE1F428F9E6CA00BD4F64 /* LoginViewController.swift */; };
@@ -41,6 +42,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84B9982828FC857300160DD8 /* FirebaseAuth in Frameworks */,
+				84D033F0291434C500DB0838 /* FSCalendar in Frameworks */,
 				848CBDC329033605003362B5 /* CalendarKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,6 +103,7 @@
 			packageProductDependencies = (
 				84B9982728FC857300160DD8 /* FirebaseAuth */,
 				848CBDC229033605003362B5 /* CalendarKit */,
+				84D033EF291434C500DB0838 /* FSCalendar */,
 			);
 			productName = "DailyPantry-cs329E";
 			productReference = 84FAE1ED28F9E6CA00BD4F64 /* DailyPantry-cs329E.app */;
@@ -132,6 +135,7 @@
 			packageReferences = (
 				84B9982628FC857300160DD8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				848CBDC129033604003362B5 /* XCRemoteSwiftPackageReference "CalendarKit" */,
+				84D033EE291434C500DB0838 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = 84FAE1EE28F9E6CA00BD4F64 /* Products */;
 			projectDirPath = "";
@@ -387,6 +391,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		84D033EE291434C500DB0838 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -399,6 +411,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 84B9982628FC857300160DD8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		84D033EF291434C500DB0838 /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84D033EE291434C500DB0838 /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
 		};
 /* End XCSwiftPackageProductDependency section */
 
