@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 
 private let reuseIdentifier = "SettingsCell"
 
@@ -61,7 +62,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         let title = UILabel()
         title.font = UIFont.boldSystemFont(ofSize: 16)
         title.textColor = .white
-        title.text = "test"
+        title.text = SettingsSection(rawValue: section)?.description
         view.addSubview(title)
         
         title.translatesAutoresizingMaskIntoConstraints = false
@@ -71,21 +72,50 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         return view
     }
     func numberOfSections (in tableView: UITableView) -> Int{
-        return 2
+        return SettingsSection.allCases.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let section = SettingsSection(rawValue: section) else { return 0}
+        
         switch section{
-        case 0: return 2
-        case 1: return 3
-        default: return 0
+        case .Social: return SocialOption.allCases.count
+        case .AppOptions: return AppOption.allCases.count
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! SettingsCell
+        guard let section = SettingsSection(rawValue: indexPath.section) else { return UITableViewCell()}
+        
+        switch section{
+        case .Social:
+            let social = SocialOption(rawValue: indexPath.row)
+            cell.sectionType = social
+        case .AppOptions:
+            let app = AppOption(rawValue: indexPath.row)
+            cell.sectionType = app
+        }
+        
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let section = SettingsSection(rawValue: indexPath.section) else { return }
+        
+        switch section{
+        case .Social:
+            let social = SocialOption(rawValue: indexPath.row)
+            // add functionality to edit profile and logout
+        case .AppOptions:
+            let app = AppOption(rawValue: indexPath.row)
+        }
+    }
+    
+    func tableView( _ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+    
     
     
 }
