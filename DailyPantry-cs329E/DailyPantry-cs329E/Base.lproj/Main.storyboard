@@ -192,7 +192,11 @@
                             </barButtonItem>
                             <barButtonItem title="Recipe Book" id="iiL-pO-Dwp"/>
                         </leftBarButtonItems>
-                        <barButtonItem key="rightBarButtonItem" title="Pantry" id="p2c-H5-IL1"/>
+                        <barButtonItem key="rightBarButtonItem" title="Pantry" id="p2c-H5-IL1">
+                            <connections>
+                                <segue destination="IDe-EI-m4z" kind="show" id="T73-Mq-fzZ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="d0o-yG-PmS" id="nvc-1x-ZVu"/>
@@ -201,6 +205,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iVz-Ya-GKw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1760.7476635514017" y="77.753779697624196"/>
+        </scene>
+        <!--Pantry View Controller-->
+        <scene sceneID="2ot-Uh-8Cd">
+            <objects>
+                <viewController id="IDe-EI-m4z" customClass="PantryViewController" customModule="DailyPantry_cs329E" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dQK-or-gqB">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="CJo-BX-SRw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Wba-Sm-7BS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PCW-fD-DjG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2753" y="590"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="gfP-3D-7nb">
