@@ -39,22 +39,22 @@ enum SocialOption: Int, CaseIterable, SectionType{
 enum AppOption: Int, CaseIterable, SectionType{
     
     case darkMode
-    case opt2
-    case opt3
+    case stylisticFont
+    case notifications
     
     var containsSwitch: Bool {
         switch self{
         case .darkMode: return true
-        case .opt2: return true
-        case .opt3: return true
+        case .stylisticFont: return true
+        case .notifications: return true
         }
     }
     
     var description: String{
         switch self{
         case .darkMode: return "Dark Mode"
-        case .opt2: return "opt 2"
-        case .opt3: return "opt 3"
+        case .stylisticFont: return "Stylistic Font"
+        case .notifications: return "Notifications"
         }
     }
 }

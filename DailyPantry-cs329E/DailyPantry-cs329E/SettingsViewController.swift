@@ -95,8 +95,15 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         case .AppOptions:
             let app = AppOption(rawValue: indexPath.row)
             cell.sectionType = app
+            // allows switch to be interacted with
+            cell.contentView.isUserInteractionEnabled = false
         }
         
+        // set stylistic font to off for defualt setting
+//        if cell.sectionType!.description == "Stylistic Font"{
+//            cell.switchControl.isOn = false
+//        }
+    
         return cell
     }
     
