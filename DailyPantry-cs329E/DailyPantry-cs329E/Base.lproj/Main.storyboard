@@ -185,7 +185,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Daily Pantry" id="y9U-Zd-4fM">
                         <leftBarButtonItems>
-                            <barButtonItem title="Item" image="gearshape.fill" catalog="system" id="UrL-Jt-H63"/>
+                            <barButtonItem title="Item" image="gearshape.fill" catalog="system" id="UrL-Jt-H63">
+                                <connections>
+                                    <segue destination="Q2t-A0-TeA" kind="show" id="Qaq-6l-uEe"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem title="Recipe Book" id="iiL-pO-Dwp"/>
                         </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" title="Pantry" id="p2c-H5-IL1"/>
@@ -197,6 +201,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iVz-Ya-GKw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1760.7476635514017" y="77.753779697624196"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="gfP-3D-7nb">
+            <objects>
+                <viewController id="Q2t-A0-TeA" customClass="SettingsViewController" customModule="DailyPantry_cs329E" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kck-eg-kib">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="bWj-Cg-RXL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="x6g-ss-cIP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qub-cr-rGs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2727" y="-284"/>
         </scene>
     </scenes>
     <resources>

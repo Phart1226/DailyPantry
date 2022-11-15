@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		84188D992903394400F0BECD /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84188D982903394400F0BECD /* CalendarViewController.swift */; };
+		84803808291B4AC500FC9152 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84803807291B4AC500FC9152 /* SettingsCell.swift */; };
+		8480380B291B4AD700FC9152 /* UserInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480380A291B4AD700FC9152 /* UserInfoHeader.swift */; };
+		8480380E291B4AEC00FC9152 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480380D291B4AEC00FC9152 /* SettingsViewController.swift */; };
+		84803812291C594F00FC9152 /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84803811291C594F00FC9152 /* SettingsSection.swift */; };
 		848CBDC329033605003362B5 /* CalendarKit in Frameworks */ = {isa = PBXBuildFile; productRef = 848CBDC229033605003362B5 /* CalendarKit */; };
 		84B9982828FC857300160DD8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 84B9982728FC857300160DD8 /* FirebaseAuth */; };
 		84B9982B28FC85AC00160DD8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B9982A28FC85AC00160DD8 /* GoogleService-Info.plist */; };
@@ -23,6 +27,10 @@
 
 /* Begin PBXFileReference section */
 		84188D982903394400F0BECD /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		84803807291B4AC500FC9152 /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		8480380A291B4AD700FC9152 /* UserInfoHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoHeader.swift; sourceTree = "<group>"; };
+		8480380D291B4AEC00FC9152 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		84803811291C594F00FC9152 /* SettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
 		84B9982A28FC85AC00160DD8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84B9982D28FC877C00160DD8 /* DailyPantry-cs329E.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DailyPantry-cs329E.entitlements"; sourceTree = "<group>"; };
 		84FAE1ED28F9E6CA00BD4F64 /* DailyPantry-cs329E.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DailyPantry-cs329E.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +79,10 @@
 			children = (
 				84B9982D28FC877C00160DD8 /* DailyPantry-cs329E.entitlements */,
 				84FAE1F028F9E6CA00BD4F64 /* AppDelegate.swift */,
+				84803807291B4AC500FC9152 /* SettingsCell.swift */,
+				8480380A291B4AD700FC9152 /* UserInfoHeader.swift */,
+				8480380D291B4AEC00FC9152 /* SettingsViewController.swift */,
+				84803811291C594F00FC9152 /* SettingsSection.swift */,
 				84FAE1F228F9E6CA00BD4F64 /* SceneDelegate.swift */,
 				84FAE1F428F9E6CA00BD4F64 /* LoginViewController.swift */,
 				84188D982903394400F0BECD /* CalendarViewController.swift */,
@@ -166,9 +178,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				84188D992903394400F0BECD /* CalendarViewController.swift in Sources */,
+				8480380B291B4AD700FC9152 /* UserInfoHeader.swift in Sources */,
 				84FAE1FB28F9E6CA00BD4F64 /* DailyPantry_cs329E.xcdatamodeld in Sources */,
+				84803808291B4AC500FC9152 /* SettingsCell.swift in Sources */,
 				84FAE1F528F9E6CA00BD4F64 /* LoginViewController.swift in Sources */,
 				84FAE1F128F9E6CA00BD4F64 /* AppDelegate.swift in Sources */,
+				84803812291C594F00FC9152 /* SettingsSection.swift in Sources */,
+				8480380E291B4AEC00FC9152 /* SettingsViewController.swift in Sources */,
 				84FAE1F328F9E6CA00BD4F64 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
