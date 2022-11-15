@@ -11,7 +11,6 @@ class RecipeViewController: UIViewController {
 
     @IBOutlet weak var recipeLabel: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

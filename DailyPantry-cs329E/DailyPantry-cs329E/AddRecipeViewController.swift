@@ -14,8 +14,10 @@ class AddRecipeViewController: UIViewController, UITableViewDelegate, UITableVie
     var addedIngredients: [Ingredient] = []
     var filteredIngredients: [Ingredient]!
     var addedQty: [Int] = []
+    var catagory:String!
+    var delegate:UIViewController!
 
-
+    @IBOutlet weak var recipeName: UITextField!
     @IBOutlet weak var addTableView: UITableView!
     @IBOutlet weak var addedTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -38,8 +40,6 @@ class AddRecipeViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
         
-    
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == addTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: IngredientTableViewCell.identifier, for: indexPath) as! IngredientTableViewCell
@@ -61,7 +61,10 @@ class AddRecipeViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
-        let recipe = Recipe(ingreidents: addedIngredients, catagory: "Breakfast")
+        let recipe = Recipe(ingreidents: addedIngredients, catagory: catagory, name: recipeName.text!)
+        let otherVC = delegate as! RecipeAdder
+        otherVC.addRecipe(newRecipe: recipe)
+        
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -78,6 +81,7 @@ class AddRecipeViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         self.addTableView.reloadData()
     }
+    
 }
 
 extension AddRecipeViewController: IngredientTableViewCellDelegate {

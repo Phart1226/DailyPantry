@@ -11,8 +11,7 @@ class RecipeCatagoriesViewController: UIViewController, UITableViewDelegate, UIT
     
     @IBOutlet weak var tableView: UITableView!
     
-    let catagoires = ["Breakfast", "Lunch", "Dinner", "Snack"]
-    
+    let catagories = ["Breakfast", "Lunch", "Dinner", "Snack"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,18 +21,25 @@ class RecipeCatagoriesViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return catagoires.count
+        return catagories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "recipieTextCellIdentifier", for: indexPath )
-        cell.textLabel?.text = catagoires[indexPath.row]
+        cell.textLabel?.text = catagories[indexPath.row]
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CatagorySegueIdentifier",
+           let destination = segue.destination as? RecipeListViewController {
+            destination.catagory = catagories[tableView.indexPathForSelectedRow!.row]
+        }
     }
     
 }
