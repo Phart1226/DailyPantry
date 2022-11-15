@@ -149,24 +149,99 @@
                     <view key="view" contentMode="scaleToFill" id="MD9-JL-zwE">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d0o-yG-PmS">
+                                <rect key="frame" x="20" y="263" width="388" height="629"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="eventCell" textLabel="kkA-q2-iDc" style="IBUITableViewCellStyleDefault" id="Xfd-3w-ZAc">
+                                        <rect key="frame" x="0.0" y="28" width="388" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xfd-3w-ZAc" id="SnN-fJ-cxo">
+                                            <rect key="frame" x="0.0" y="0.0" width="388" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kkA-q2-iDc">
+                                                    <rect key="frame" x="20" y="0.0" width="348" height="43.666667938232422"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="hPb-OY-M3r"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hPb-OY-M3r" firstAttribute="trailing" secondItem="d0o-yG-PmS" secondAttribute="trailing" constant="20" id="Dqt-WI-rWU"/>
+                            <constraint firstItem="d0o-yG-PmS" firstAttribute="leading" secondItem="hPb-OY-M3r" secondAttribute="leading" constant="20" id="Mur-fw-j7k"/>
+                            <constraint firstItem="d0o-yG-PmS" firstAttribute="centerX" secondItem="MD9-JL-zwE" secondAttribute="centerX" id="iYf-p0-UYX"/>
+                            <constraint firstItem="d0o-yG-PmS" firstAttribute="bottom" secondItem="hPb-OY-M3r" secondAttribute="bottom" id="kpI-uT-mdp"/>
+                            <constraint firstItem="d0o-yG-PmS" firstAttribute="top" secondItem="hPb-OY-M3r" secondAttribute="top" constant="175" id="ppS-vJ-GbO"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Daily Pantry" id="y9U-Zd-4fM">
                         <leftBarButtonItems>
-                            <barButtonItem title="Item" image="gearshape.fill" catalog="system" id="UrL-Jt-H63"/>
+                            <barButtonItem title="Item" image="gearshape.fill" catalog="system" id="UrL-Jt-H63">
+                                <connections>
+                                    <segue destination="Q2t-A0-TeA" kind="show" id="Qaq-6l-uEe"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem title="Recipe Book" id="iiL-pO-Dwp">
                                 <connections>
                                     <segue destination="4MU-kc-acj" kind="show" identifier="recipeCatSegueIdentifier" id="YGN-LZ-IkQ"/>
                                 </connections>
                             </barButtonItem>
                         </leftBarButtonItems>
-                        <barButtonItem key="rightBarButtonItem" title="Pantry" id="p2c-H5-IL1"/>
+                        <barButtonItem key="rightBarButtonItem" title="Pantry" id="p2c-H5-IL1">
+                            <connections>
+                                <segue destination="IDe-EI-m4z" kind="show" id="T73-Mq-fzZ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="d0o-yG-PmS" id="nvc-1x-ZVu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iVz-Ya-GKw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1762" y="78"/>
+            <point key="canvasLocation" x="1760.7476635514017" y="77.753779697624196"/>
+        </scene>
+        <!--Pantry View Controller-->
+        <scene sceneID="2ot-Uh-8Cd">
+            <objects>
+                <viewController id="IDe-EI-m4z" customClass="PantryViewController" customModule="DailyPantry_cs329E" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dQK-or-gqB">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="CJo-BX-SRw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Wba-Sm-7BS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PCW-fD-DjG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2753" y="590"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="gfP-3D-7nb">
+            <objects>
+                <viewController id="Q2t-A0-TeA" customClass="SettingsViewController" customModule="DailyPantry_cs329E" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kck-eg-kib">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="bWj-Cg-RXL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="x6g-ss-cIP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qub-cr-rGs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2727" y="-284"/>
         </scene>
         <!--Recipe Book-->
         <scene sceneID="tT3-4b-Zs2">

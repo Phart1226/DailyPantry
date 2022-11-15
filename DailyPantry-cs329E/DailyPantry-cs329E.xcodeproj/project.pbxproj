@@ -8,9 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		84188D992903394400F0BECD /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84188D982903394400F0BECD /* CalendarViewController.swift */; };
+		84803808291B4AC500FC9152 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84803807291B4AC500FC9152 /* SettingsCell.swift */; };
+		8480380B291B4AD700FC9152 /* UserInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480380A291B4AD700FC9152 /* UserInfoHeader.swift */; };
+		8480380E291B4AEC00FC9152 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480380D291B4AEC00FC9152 /* SettingsViewController.swift */; };
+		84803812291C594F00FC9152 /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84803811291C594F00FC9152 /* SettingsSection.swift */; };
 		848CBDC329033605003362B5 /* CalendarKit in Frameworks */ = {isa = PBXBuildFile; productRef = 848CBDC229033605003362B5 /* CalendarKit */; };
 		84B9982828FC857300160DD8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 84B9982728FC857300160DD8 /* FirebaseAuth */; };
 		84B9982B28FC85AC00160DD8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B9982A28FC85AC00160DD8 /* GoogleService-Info.plist */; };
+		84C17B1429219C8F00F33A9E /* PantryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C17B1329219C8F00F33A9E /* PantryViewController.swift */; };
+		84C17B1729219EF600F33A9E /* PantrySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C17B1629219EF600F33A9E /* PantrySection.swift */; };
+		84D033F0291434C500DB0838 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 84D033EF291434C500DB0838 /* FSCalendar */; };
 		84FAE1F128F9E6CA00BD4F64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAE1F028F9E6CA00BD4F64 /* AppDelegate.swift */; };
 		84FAE1F328F9E6CA00BD4F64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAE1F228F9E6CA00BD4F64 /* SceneDelegate.swift */; };
 		84FAE1F528F9E6CA00BD4F64 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAE1F428F9E6CA00BD4F64 /* LoginViewController.swift */; };
@@ -29,8 +36,14 @@
 
 /* Begin PBXFileReference section */
 		84188D982903394400F0BECD /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		84803807291B4AC500FC9152 /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		8480380A291B4AD700FC9152 /* UserInfoHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoHeader.swift; sourceTree = "<group>"; };
+		8480380D291B4AEC00FC9152 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		84803811291C594F00FC9152 /* SettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
 		84B9982A28FC85AC00160DD8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84B9982D28FC877C00160DD8 /* DailyPantry-cs329E.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DailyPantry-cs329E.entitlements"; sourceTree = "<group>"; };
+		84C17B1329219C8F00F33A9E /* PantryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryViewController.swift; sourceTree = "<group>"; };
+		84C17B1629219EF600F33A9E /* PantrySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantrySection.swift; sourceTree = "<group>"; };
 		84FAE1ED28F9E6CA00BD4F64 /* DailyPantry-cs329E.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DailyPantry-cs329E.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FAE1F028F9E6CA00BD4F64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84FAE1F228F9E6CA00BD4F64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +68,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84B9982828FC857300160DD8 /* FirebaseAuth in Frameworks */,
+				84D033F0291434C500DB0838 /* FSCalendar in Frameworks */,
 				848CBDC329033605003362B5 /* CalendarKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,6 +97,11 @@
 			children = (
 				84B9982D28FC877C00160DD8 /* DailyPantry-cs329E.entitlements */,
 				84FAE1F028F9E6CA00BD4F64 /* AppDelegate.swift */,
+				84803807291B4AC500FC9152 /* SettingsCell.swift */,
+				8480380A291B4AD700FC9152 /* UserInfoHeader.swift */,
+				8480380D291B4AEC00FC9152 /* SettingsViewController.swift */,
+				84803811291C594F00FC9152 /* SettingsSection.swift */,
+				84C17B1629219EF600F33A9E /* PantrySection.swift */,
 				84FAE1F228F9E6CA00BD4F64 /* SceneDelegate.swift */,
 				84FAE1F428F9E6CA00BD4F64 /* LoginViewController.swift */,
 				84188D982903394400F0BECD /* CalendarViewController.swift */,
@@ -94,6 +113,7 @@
 				BBB002DA291092D2004B23BD /* RecipeViewController.swift */,
 				BBB002DC291092F6004B23BD /* RecipeListViewController.swift */,
 				BBB002D629108291004B23BD /* Recipe.swift */,
+				84C17B1329219C8F00F33A9E /* PantryViewController.swift */,
 				84FAE1FC28F9E6CB00BD4F64 /* Assets.xcassets */,
 				84FAE1FE28F9E6CB00BD4F64 /* LaunchScreen.storyboard */,
 				84FAE20128F9E6CB00BD4F64 /* Info.plist */,
@@ -122,6 +142,7 @@
 			packageProductDependencies = (
 				84B9982728FC857300160DD8 /* FirebaseAuth */,
 				848CBDC229033605003362B5 /* CalendarKit */,
+				84D033EF291434C500DB0838 /* FSCalendar */,
 			);
 			productName = "DailyPantry-cs329E";
 			productReference = 84FAE1ED28F9E6CA00BD4F64 /* DailyPantry-cs329E.app */;
@@ -153,6 +174,7 @@
 			packageReferences = (
 				84B9982628FC857300160DD8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				848CBDC129033604003362B5 /* XCRemoteSwiftPackageReference "CalendarKit" */,
+				84D033EE291434C500DB0838 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = 84FAE1EE28F9E6CA00BD4F64 /* Products */;
 			projectDirPath = "";
@@ -186,12 +208,18 @@
 				BBB002D92910904F004B23BD /* RecipeCatagoriesViewController.swift in Sources */,
 				BBB002DF2910930E004B23BD /* AddRecipeViewController.swift in Sources */,
 				BBB002DD291092F6004B23BD /* RecipeListViewController.swift in Sources */,
+				8480380B291B4AD700FC9152 /* UserInfoHeader.swift in Sources */,
 				84FAE1FB28F9E6CA00BD4F64 /* DailyPantry_cs329E.xcdatamodeld in Sources */,
+				84C17B1729219EF600F33A9E /* PantrySection.swift in Sources */,
+				84803808291B4AC500FC9152 /* SettingsCell.swift in Sources */,
+				84C17B1429219C8F00F33A9E /* PantryViewController.swift in Sources */,
 				84FAE1F528F9E6CA00BD4F64 /* LoginViewController.swift in Sources */,
 				BBB002DB291092D2004B23BD /* RecipeViewController.swift in Sources */,
 				BBB002D729108291004B23BD /* Recipe.swift in Sources */,
 				BB5844E6291472CB00FA3677 /* IngredientTableViewCell.swift in Sources */,
 				84FAE1F128F9E6CA00BD4F64 /* AppDelegate.swift in Sources */,
+				84803812291C594F00FC9152 /* SettingsSection.swift in Sources */,
+				8480380E291B4AEC00FC9152 /* SettingsViewController.swift in Sources */,
 				84FAE1F328F9E6CA00BD4F64 /* SceneDelegate.swift in Sources */,
 				BBB002E32911F084004B23BD /* Ingredient.swift in Sources */,
 			);
@@ -415,6 +443,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		84D033EE291434C500DB0838 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -427,6 +463,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 84B9982628FC857300160DD8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		84D033EF291434C500DB0838 /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84D033EE291434C500DB0838 /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
 		};
 /* End XCSwiftPackageProductDependency section */
 
