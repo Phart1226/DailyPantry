@@ -14,8 +14,6 @@ let context = appDelegate.persistentContainer.viewContext
 
 class AddRecipeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
-    var ingredients:[NSManagedObject] = []
-    
     var addedIngredients: [NSManagedObject] = []
     var filteredIngredients: [NSManagedObject]!
     var addedQty: [Int] = []
@@ -69,8 +67,14 @@ class AddRecipeViewController: UIViewController, UITableViewDelegate, UITableVie
 //        let recipe = Recipe(ingreidents: addedIngredients, catagory: catagory, name: recipeName.text!)
 //        let otherVC = delegate as! RecipeAdder
 //        otherVC.addRecipe(newRecipe: recipe)
-
         
+        let recipe = StoredRecipe(context: context)
+        recipe.name = recipeName.text
+        recipe.catagory = catagory
+        recipe.ingredient = NSSet(array: addedIngredients)
+
+        saveContext()
+ 
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -114,6 +118,31 @@ class AddRecipeViewController: UIViewController, UITableViewDelegate, UITableVie
                 NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    func clearCoreData() {
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "StoredIngredient")
+        var fetchedResults:[NSManagedObject]
+        
+        do {
+            try fetchedResults = context.fetch(request) as! [NSManagedObject]
+            
+            if fetchedResults.count > 0 {
+                for result:AnyObject in fetchedResults {
+                    context.delete(result as! NSManagedObject)
+                    print("\(result.value(forKey: "name")!) has been deleted")
+                }
+            }
+            saveContext()
+            
+        } catch {
+            // if an error occurs
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+        
     }
 
     

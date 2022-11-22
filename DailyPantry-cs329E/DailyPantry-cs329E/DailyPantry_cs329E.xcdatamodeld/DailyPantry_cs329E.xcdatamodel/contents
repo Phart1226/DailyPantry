@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="StoredIngredient" representedClassName="StoredIngredient" syncable="YES" codeGenerationType="class">
+    <entity name="StoredIngredient" representedClassName="StoredIngredient" syncable="YES">
         <attribute name="amountAvailable" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="catagory" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="unit" optional="YES" attributeType="String"/>
+        <relationship name="recipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StoredRecipe" inverseName="ingredient" inverseEntity="StoredRecipe"/>
+    </entity>
+    <entity name="StoredRecipe" representedClassName="StoredRecipe" syncable="YES">
+        <attribute name="catagory" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="ingredient" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StoredIngredient" inverseName="recipe" inverseEntity="StoredIngredient"/>
     </entity>
     <elements>
-        <element name="StoredIngredient" positionX="-45" positionY="0" width="128" height="89"/>
+        <element name="StoredIngredient" positionX="-45" positionY="0" width="128" height="104"/>
+        <element name="StoredRecipe" positionX="-9" positionY="63" width="128" height="74"/>
     </elements>
 </model>

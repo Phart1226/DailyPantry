@@ -303,7 +303,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="c8r-DL-ilk" kind="show" id="bkb-Lk-xrW"/>
+                                            <segue destination="c8r-DL-ilk" kind="show" identifier="recipeSegueIndentifier" id="bkb-Lk-xrW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -351,7 +351,7 @@
                                 <rect key="frame" x="20" y="179" width="388" height="304"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="lvZ-1V-E5U">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ingredientCell" id="lvZ-1V-E5U">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="388" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lvZ-1V-E5U" id="3o1-9c-l7e">
@@ -387,6 +387,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="aLf-Vp-NcK"/>
                     <connections>
+                        <outlet property="ingredientsTableView" destination="G4u-Nk-NXu" id="5v2-b0-Wqo"/>
                         <outlet property="recipeLabel" destination="UpV-Qf-iqf" id="w4D-OJ-lgX"/>
                     </connections>
                 </viewController>

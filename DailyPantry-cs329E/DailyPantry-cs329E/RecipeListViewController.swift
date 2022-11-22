@@ -6,16 +6,11 @@
 //
 
 import UIKit
+import CoreData
 
-protocol RecipeAdder {
-    func addRecipe(newRecipe: Recipe)
-}
-
-class RecipeListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, RecipeAdder{
+class RecipeListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var recipeListTableView: UITableView!
-    
-    var recipeList:[Recipe] = []
     
     var catagory:String!
     
@@ -23,23 +18,23 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         
         recipeListTableView.delegate = self
-        recipeListTableView.dataSource = self        
+        recipeListTableView.dataSource = self
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        recipeListTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return recipeList.count
+        return retrieveRecipe().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = recipeListTableView.dequeueReusableCell(withIdentifier: "recipeCell", for: indexPath)
-        cell.textLabel?.text = recipeList[indexPath.row].name
+        cell.textLabel?.text = (retrieveRecipe()[indexPath.row].value(forKey: "name") as! String)
         
         return cell
-    }
-    
-    func addRecipe(newRecipe: Recipe) {
-        recipeList.append(newRecipe)
-        recipeListTableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -48,6 +43,26 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
             destination.catagory = catagory
             destination.delegate = self
         }
+        if segue.identifier == "recipeSegueIndentifier", let destination = segue.destination as? RecipeViewController {
+            destination.delegate = self
+            destination.recipe = retrieveRecipe()[recipeListTableView.indexPathForSelectedRow!.row]
+        }
+    }
+    
+    func retrieveRecipe() -> [NSManagedObject] {
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "StoredRecipe")
+        var fetchedResults:[NSManagedObject]? = nil
+        
+        do {
+            try fetchedResults = context.fetch(request) as? [NSManagedObject]
+        } catch {
+            // if an error occurs
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+        return(fetchedResults)!
     }
 
 }
