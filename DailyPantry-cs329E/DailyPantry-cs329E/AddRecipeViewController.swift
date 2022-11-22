@@ -6,13 +6,18 @@
 //
 
 import UIKit
+import CoreData
+
+let appDelegate = UIApplication.shared.delegate as! AppDelegate
+let context = appDelegate.persistentContainer.viewContext
+
 
 class AddRecipeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
-    var ingredients:[Ingredient] = [Ingredient(name: "Egg", unit: "Whole", amountAvailable: 12, catagory: "Fridge"), Ingredient(name: "Milk", unit: "Cup", amountAvailable: 20, catagory: "Fridge")]
+    var ingredients:[NSManagedObject] = []
     
-    var addedIngredients: [Ingredient] = []
-    var filteredIngredients: [Ingredient]!
+    var addedIngredients: [NSManagedObject] = []
+    var filteredIngredients: [NSManagedObject]!
     var addedQty: [Int] = []
     var catagory:String!
     var delegate:UIViewController!
@@ -29,7 +34,7 @@ class AddRecipeViewController: UIViewController, UITableViewDelegate, UITableVie
         addedTableView.delegate = self
         addedTableView.dataSource = self
         searchBar.delegate = self
-        filteredIngredients = ingredients
+        filteredIngredients = retrieveIngredients()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,8 +49,8 @@ class AddRecipeViewController: UIViewController, UITableViewDelegate, UITableVie
         if tableView == addTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: IngredientTableViewCell.identifier, for: indexPath) as! IngredientTableViewCell
             
-            cell.textLabel?.text = filteredIngredients[indexPath.row].name
-            cell.unitLabel?.text = filteredIngredients[indexPath.row].unit
+            cell.textLabel?.text = filteredIngredients[indexPath.row].value(forKey: "name") as! String
+            cell.unitLabel?.text = filteredIngredients[indexPath.row].value(forKey: "unit") as! String
             cell.configure(with: filteredIngredients[indexPath.row])
             cell.delegate = self
         
@@ -53,7 +58,7 @@ class AddRecipeViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "AddedIngredientCell", for: indexPath)
-            cell.textLabel?.text = addedIngredients[indexPath.row].name
+            cell.textLabel?.text = addedIngredients[indexPath.row].value(forKey: "name") as! String
             cell.detailTextLabel?.text = String(addedQty[indexPath.row])
             return cell
         }
@@ -61,9 +66,10 @@ class AddRecipeViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
-        let recipe = Recipe(ingreidents: addedIngredients, catagory: catagory, name: recipeName.text!)
-        let otherVC = delegate as! RecipeAdder
-        otherVC.addRecipe(newRecipe: recipe)
+//        let recipe = Recipe(ingreidents: addedIngredients, catagory: catagory, name: recipeName.text!)
+//        let otherVC = delegate as! RecipeAdder
+//        otherVC.addRecipe(newRecipe: recipe)
+
         
     }
     
@@ -71,10 +77,11 @@ class AddRecipeViewController: UIViewController, UITableViewDelegate, UITableVie
         filteredIngredients = []
         
         if searchText == "" {
-            filteredIngredients = ingredients
+            filteredIngredients = retrieveIngredients()
         } else {
-            for ingredient in ingredients {
-                if ingredient.name.localizedCaseInsensitiveContains(searchText) {
+            for ingredient in retrieveIngredients() {
+                let name = ingredient.value(forKey: "name") as! String
+                if name.localizedCaseInsensitiveContains(searchText) {
                     filteredIngredients.append(ingredient)
                 }
             }
@@ -82,10 +89,38 @@ class AddRecipeViewController: UIViewController, UITableViewDelegate, UITableVie
         self.addTableView.reloadData()
     }
     
+    func retrieveIngredients() -> [NSManagedObject] {
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "StoredIngredient")
+        var fetchedResults:[NSManagedObject]? = nil
+        
+        do {
+            try fetchedResults = context.fetch(request) as? [NSManagedObject]
+        } catch {
+            // if an error occurs
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+        return(fetchedResults)!
+    }
+    
+    func saveContext () {
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
+    }
+
+    
 }
 
 extension AddRecipeViewController: IngredientTableViewCellDelegate {
-    func addButtonPressed(with ingredient: Ingredient, with qty: Int) {
+    func addButtonPressed(with ingredient: NSManagedObject, with qty: Int) {
         if !addedIngredients.contains(ingredient) {
             addedIngredients.append(ingredient)
             addedQty.append(qty)

@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import CoreData
+
 
 protocol IngredientTableViewCellDelegate: AnyObject {
-    func addButtonPressed(with ingredient: Ingredient, with qty:Int)
+    func addButtonPressed(with ingredient: NSManagedObject, with qty:Int)
 }
 
 class IngredientTableViewCell: UITableViewCell {
@@ -16,13 +18,13 @@ class IngredientTableViewCell: UITableViewCell {
     @IBOutlet weak var unitLabel: UILabel!
     @IBOutlet weak var unitField: UITextField!
     @IBOutlet weak var addButton: UIButton!
-    var ingredient: Ingredient!
+    var ingredient: NSManagedObject!
     
     weak var delegate: IngredientTableViewCellDelegate?
     static let identifier = "ingredientCell"
 
     
-    func configure(with ingredient:Ingredient) {
+    func configure(with ingredient:NSManagedObject) {
         self.ingredient = ingredient
     }
     
