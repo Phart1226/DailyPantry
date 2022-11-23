@@ -64,17 +64,25 @@ class AddRecipeViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
-//        let recipe = Recipe(ingreidents: addedIngredients, catagory: catagory, name: recipeName.text!)
-//        let otherVC = delegate as! RecipeAdder
-//        otherVC.addRecipe(newRecipe: recipe)
         
         let recipe = StoredRecipe(context: context)
         recipe.name = recipeName.text
         recipe.catagory = catagory
         recipe.ingredient = NSSet(array: addedIngredients)
 
+        var qtyArray:[StoredQty] = []
+
+        for i in 0...addedIngredients.count - 1{
+            let qty = StoredQty(context: context)
+            qty.qty = Double(addedQty[i])
+            qty.ingredientName = addedIngredients[i].value(forKey: "name") as! String
+            qtyArray.append(qty)
+        }
+        
+        recipe.qty = NSSet(array: qtyArray)
+        
         saveContext()
- 
+        
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -122,7 +130,7 @@ class AddRecipeViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func clearCoreData() {
         
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "StoredIngredient")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "StoredRecipe")
         var fetchedResults:[NSManagedObject]
         
         do {
