@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var recipeLabel: UILabel!
     @IBOutlet weak var ingredientsTableView: UITableView!
@@ -24,14 +24,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         ingredientsTableView.dataSource = self
         
         recipeLabel.text = (recipe.value(forKey: "name") as! String)
-        
-        let qty = recipe.value(forKey: "qty") as! NSSet
-        
-        for i in qty.allObjects {
-            print((i as AnyObject).value(forKey: "qty") as! Double)
-            print((i as AnyObject).value(forKey: "ingredientName") as! String)
-        }
-        
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,11 +36,17 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = ingredientsTableView.dequeueReusableCell(withIdentifier: "ingredientCell", for: indexPath)
         
         let ingredients = recipe.value(forKey: "ingredient") as! NSSet
+        let qtyArry = (recipe.value(forKey: "qty") as! NSSet).allObjects
         let ingredient = ingredients.allObjects[indexPath.row] as! NSManagedObject
+        let ingredientName = (ingredient.value(forKey: "name") as! String)
+        let qtyIndex = qtyArry.firstIndex(where: {($0 as! StoredQty).ingredientName! == ingredientName})
+        let qty = (qtyArry[qtyIndex!] as! StoredQty).qty
         
-        cell.textLabel?.text = (ingredient.value(forKey: "name") as! String)
         
-        
+        cell.textLabel?.text = ingredientName
+        cell.detailTextLabel?.text = String(qty)
+    
+
         return cell
         
     }
