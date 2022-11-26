@@ -18,7 +18,7 @@ private let reuseIdentifier = "PantryCell"
 class PantryViewController: UIViewController {
     
     var tableView: UITableView!
-    var tempMat = ["Meat": ExpandableNames(isExpanded: true, names: ["Turkey", "Beef"]), "Produce": ExpandableNames(isExpanded: true, names: ["Apple", "Banana", "Lettuce"]) , "Snacks": ExpandableNames(isExpanded: true, names: ["Chips", "Granola Bar"]), "Spices": ExpandableNames(isExpanded: true, names: ["Salt", "Pepper"])]
+    var tempMat = ["Meat": ExpandableNames(isExpanded: true, names: ["Turkey", "Beef"]), "Produce": ExpandableNames(isExpanded: true, names: ["Apple", "Banana", "Lettuce"]) , "Snacks": ExpandableNames(isExpanded: true, names: ["Chips", "Granola Bar"]), "Spices": ExpandableNames(isExpanded: true, names: ["Salt", "Pepper"]), "Dairy": ExpandableNames(isExpanded: true, names: ["Salt", "Pepper"]), "Miscellaneous": ExpandableNames(isExpanded: true, names: ["Salt", "Pepper"])]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +49,6 @@ class PantryViewController: UIViewController {
 //        navigationController?.navigationBar.barTintColor = UIColor(red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
         navigationItem.title = "Pantry"
     }
-
 }
 
 extension PantryViewController: UITableViewDelegate, UITableViewDataSource {
@@ -75,9 +74,13 @@ extension PantryViewController: UITableViewDelegate, UITableViewDataSource {
         case 1:
             section = "Produce"
         case 2:
-            section = "Snacks"
+            section = "Dairy"
         case 3:
+            section = "Snacks"
+        case 4:
             section = "Spices"
+        case 5:
+            section = "Miscellaneous"
         default:
             section = ""
         }
@@ -110,8 +113,10 @@ extension PantryViewController: UITableViewDelegate, UITableViewDataSource {
             switch section{
             case .Meat: return tempMat["Meat"]!.names.count
             case .Produce: return tempMat["Produce"]!.names.count
+            case .Dairy: return tempMat["Dairy"]!.names.count
             case .Snacks: return tempMat["Snacks"]!.names.count
             case .Spices: return tempMat["Spices"]!.names.count
+            case .Miscellaneous: return tempMat["Miscellaneous"]!.names.count
             }
         }
         else{
@@ -130,10 +135,14 @@ extension PantryViewController: UITableViewDelegate, UITableViewDataSource {
             cell.textLabel?.text = tempMat["Meat"]!.names[indexPath.row]
         case .Produce:
             cell.textLabel?.text = tempMat["Produce"]!.names[indexPath.row]
+        case .Dairy:
+            cell.textLabel?.text = tempMat["Dairy"]!.names[indexPath.row]
         case .Snacks:
             cell.textLabel?.text = tempMat["Snacks"]!.names[indexPath.row]
         case .Spices:
             cell.textLabel?.text = tempMat["Spices"]!.names[indexPath.row]
+        case .Miscellaneous:
+            cell.textLabel?.text = tempMat["Miscellaneous"]!.names[indexPath.row]
 
         }
         
