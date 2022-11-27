@@ -28,6 +28,8 @@ class AddRecipeViewController: UIViewController, UITableViewDelegate, UITableVie
         addedTableView.dataSource = self
         searchBar.delegate = self
         filteredIngredients = ingredients
+        
+        startObserving(&UIStyleManager.shared)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
