@@ -1,21 +1,20 @@
 //
-//  RecipeListViewController.swift
+//  CustomNavController.swift
 //  DailyPantry-cs329E
 //
-//  Created by Hamza Elsiesy on 10/31/22.
+//  Created by Jonathan Abdo on 11/26/22.
 //
 
 import UIKit
 
-class RecipeListViewController: UIViewController {
+class CustomNavController: UINavigationController {
 
-    @IBOutlet weak var recipeListTableView: UITableView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         startObserving(&UIStyleManager.shared)
+        
+        //self.title.Font
         // Do any additional setup after loading the view.
     }
-
+    
 }

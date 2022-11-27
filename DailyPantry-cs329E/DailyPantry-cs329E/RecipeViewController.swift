@@ -14,6 +14,8 @@ class RecipeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        startObserving(&UIStyleManager.shared)
 
         // Do any additional setup after loading the view.
     }
