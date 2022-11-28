@@ -23,8 +23,6 @@ class PantryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        
-        startObserving(&UIStyleManager.shared)
     }
 
     // MARK: - Helper Functions
