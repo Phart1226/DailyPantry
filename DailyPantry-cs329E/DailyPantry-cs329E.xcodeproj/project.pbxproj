@@ -25,10 +25,18 @@
 		84FAE1FB28F9E6CA00BD4F64 /* DailyPantry_cs329E.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84FAE1F928F9E6CA00BD4F64 /* DailyPantry_cs329E.xcdatamodeld */; };
 		84FAE1FD28F9E6CB00BD4F64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84FAE1FC28F9E6CB00BD4F64 /* Assets.xcassets */; };
 		84FAE20028F9E6CB00BD4F64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FAE1FE28F9E6CB00BD4F64 /* LaunchScreen.storyboard */; };
+		BB0BB0A0292D685D00DF3725 /* StoredIngredient+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BB09C292D685D00DF3725 /* StoredIngredient+CoreDataClass.swift */; };
+		BB0BB0A1292D685D00DF3725 /* StoredIngredient+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BB09D292D685D00DF3725 /* StoredIngredient+CoreDataProperties.swift */; };
+		BB0BB0AB292D97C600DF3725 /* StoredRecipe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BB0A7292D97C600DF3725 /* StoredRecipe+CoreDataClass.swift */; };
+		BB0BB0AC292D97C600DF3725 /* StoredRecipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BB0A8292D97C600DF3725 /* StoredRecipe+CoreDataProperties.swift */; };
+		BB0BB0AD292D97C600DF3725 /* StoredQty+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BB0A9292D97C600DF3725 /* StoredQty+CoreDataClass.swift */; };
+		BB0BB0AE292D97C600DF3725 /* StoredQty+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BB0AA292D97C600DF3725 /* StoredQty+CoreDataProperties.swift */; };
+
 		ADAE70C429327FF900069702 /* UIStyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAE70C329327FF900069702 /* UIStyleManager.swift */; };
 		ADAE70C6293283C500069702 /* UIStyleObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAE70C5293283C500069702 /* UIStyleObserver.swift */; };
 		ADAE70C82932849700069702 /* WeakStyleObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAE70C72932849700069702 /* WeakStyleObserver.swift */; };
 		ADAE70CA29328A4E00069702 /* CustomNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAE70C929328A4E00069702 /* CustomNavController.swift */; };
+
 		BB5844E6291472CB00FA3677 /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5844E5291472CB00FA3677 /* IngredientTableViewCell.swift */; };
 		BBB002D729108291004B23BD /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB002D629108291004B23BD /* Recipe.swift */; };
 		BBB002D92910904F004B23BD /* RecipeCatagoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB002D82910904F004B23BD /* RecipeCatagoriesViewController.swift */; };
@@ -57,6 +65,12 @@
 		84FAE1FC28F9E6CB00BD4F64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84FAE1FF28F9E6CB00BD4F64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84FAE20128F9E6CB00BD4F64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB0BB09C292D685D00DF3725 /* StoredIngredient+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoredIngredient+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BB0BB09D292D685D00DF3725 /* StoredIngredient+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoredIngredient+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BB0BB0A7292D97C600DF3725 /* StoredRecipe+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoredRecipe+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BB0BB0A8292D97C600DF3725 /* StoredRecipe+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoredRecipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BB0BB0A9292D97C600DF3725 /* StoredQty+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoredQty+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BB0BB0AA292D97C600DF3725 /* StoredQty+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoredQty+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		ADAE70C329327FF900069702 /* UIStyleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStyleManager.swift; sourceTree = "<group>"; };
 		ADAE70C5293283C500069702 /* UIStyleObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStyleObserver.swift; sourceTree = "<group>"; };
 		ADAE70C72932849700069702 /* WeakStyleObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakStyleObserver.swift; sourceTree = "<group>"; };
@@ -103,6 +117,7 @@
 		84FAE1EF28F9E6CA00BD4F64 /* DailyPantry-cs329E */ = {
 			isa = PBXGroup;
 			children = (
+				BB0BB0A2292D686800DF3725 /* Model */,
 				84B9982D28FC877C00160DD8 /* DailyPantry-cs329E.entitlements */,
 				84FAE1F028F9E6CA00BD4F64 /* AppDelegate.swift */,
 				ADAE70C329327FF900069702 /* UIStyleManager.swift */,
@@ -133,6 +148,19 @@
 				84B9982A28FC85AC00160DD8 /* GoogleService-Info.plist */,
 			);
 			path = "DailyPantry-cs329E";
+			sourceTree = "<group>";
+		};
+		BB0BB0A2292D686800DF3725 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BB0BB0A7292D97C600DF3725 /* StoredRecipe+CoreDataClass.swift */,
+				BB0BB0A8292D97C600DF3725 /* StoredRecipe+CoreDataProperties.swift */,
+				BB0BB0A9292D97C600DF3725 /* StoredQty+CoreDataClass.swift */,
+				BB0BB0AA292D97C600DF3725 /* StoredQty+CoreDataProperties.swift */,
+				BB0BB09C292D685D00DF3725 /* StoredIngredient+CoreDataClass.swift */,
+				BB0BB09D292D685D00DF3725 /* StoredIngredient+CoreDataProperties.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,19 +253,25 @@
 				ADAE70C82932849700069702 /* WeakStyleObserver.swift in Sources */,
 				8480380B291B4AD700FC9152 /* UserInfoHeader.swift in Sources */,
 				84FAE1FB28F9E6CA00BD4F64 /* DailyPantry_cs329E.xcdatamodeld in Sources */,
+				BB0BB0AC292D97C600DF3725 /* StoredRecipe+CoreDataProperties.swift in Sources */,
+				BB0BB0AB292D97C600DF3725 /* StoredRecipe+CoreDataClass.swift in Sources */,
 				84C17B1729219EF600F33A9E /* PantrySection.swift in Sources */,
 				84803808291B4AC500FC9152 /* SettingsCell.swift in Sources */,
 				84C17B1429219C8F00F33A9E /* PantryViewController.swift in Sources */,
+				BB0BB0A0292D685D00DF3725 /* StoredIngredient+CoreDataClass.swift in Sources */,
 				ADAE70CA29328A4E00069702 /* CustomNavController.swift in Sources */,
 				84FAE1F528F9E6CA00BD4F64 /* LoginViewController.swift in Sources */,
 				BBB002DB291092D2004B23BD /* RecipeViewController.swift in Sources */,
 				BBB002D729108291004B23BD /* Recipe.swift in Sources */,
 				BB5844E6291472CB00FA3677 /* IngredientTableViewCell.swift in Sources */,
+				BB0BB0AD292D97C600DF3725 /* StoredQty+CoreDataClass.swift in Sources */,
 				84FAE1F128F9E6CA00BD4F64 /* AppDelegate.swift in Sources */,
 				84803812291C594F00FC9152 /* SettingsSection.swift in Sources */,
+				BB0BB0AE292D97C600DF3725 /* StoredQty+CoreDataProperties.swift in Sources */,
 				8480380E291B4AEC00FC9152 /* SettingsViewController.swift in Sources */,
 				84FAE1F328F9E6CA00BD4F64 /* SceneDelegate.swift in Sources */,
 				BBB002E32911F084004B23BD /* Ingredient.swift in Sources */,
+				BB0BB0A1292D685D00DF3725 /* StoredIngredient+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

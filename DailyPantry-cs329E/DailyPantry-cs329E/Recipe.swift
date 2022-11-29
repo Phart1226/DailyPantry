@@ -10,11 +10,14 @@ import UIKit
 class Recipe: NSObject {
     var ingreidents: [Ingredient]
     var catagory: String
+    var name: String
 
     
-    init(ingreidents:[Ingredient], catagory:String) {
+    init(ingreidents:[Ingredient], catagory:String, name:String) {
+        
         self.ingreidents = ingreidents
         self.catagory = catagory
+        self.name = name
 
     }
 }
