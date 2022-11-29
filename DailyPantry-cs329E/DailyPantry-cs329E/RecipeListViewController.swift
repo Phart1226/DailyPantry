@@ -16,7 +16,6 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         recipeListTableView.delegate = self
         recipeListTableView.dataSource = self
         
@@ -63,6 +62,8 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
             abort()
         }
         return(fetchedResults)!
+        startObserving(&UIStyleManager.shared)
+
     }
 
 }

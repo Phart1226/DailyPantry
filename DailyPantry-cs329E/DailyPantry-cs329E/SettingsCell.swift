@@ -10,6 +10,7 @@ import UIKit
 
 class SettingsCell: UITableViewCell {
     
+    var switchLabel = ""
     // MARK: - Properties
     var sectionType: SectionType? {
         didSet{
@@ -25,7 +26,6 @@ class SettingsCell: UITableViewCell {
         switchControl.onTintColor = UIColor(red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
         switchControl.translatesAutoresizingMaskIntoConstraints = false
         switchControl.addTarget(self, action: #selector(handleSwitchAction), for: .valueChanged)
-        
         return switchControl
         
     }()
@@ -45,10 +45,33 @@ class SettingsCell: UITableViewCell {
     }
     
     @objc func handleSwitchAction(sender: UISwitch){
+        
         // add functionality to switch to dark mode, change font style, ect
         if sender.isOn{
+            if self.switchLabel == "Dark Mode" {
+                let darkModeOn = true
+                        
+                UserDefaults.standard.set(darkModeOn, forKey: UIStyleManager.uiStyleDarkModeOn)
+                        
+                        // Update interface style
+                UIStyleManager.shared.updateUserInterfaceStyle(darkModeOn)
+            }
+            if self.switchLabel == "Stylistic Font" {
+                self.textLabel?.font  = UIFont(name: "Papyrus", size: 18)
+            }
             print("turned on")
         }else{
+            if self.switchLabel == "Dark Mode" {
+                let darkModeOn = false
+                        
+                UserDefaults.standard.set(darkModeOn, forKey: UIStyleManager.uiStyleDarkModeOn)
+                        
+                        // Update interface style
+                UIStyleManager.shared.updateUserInterfaceStyle(darkModeOn)
+            }
+            if self.switchLabel == "Stylistic Font" {
+                self.textLabel?.font  = .preferredFont(forTextStyle: .body)
+            }
             print("turned off")
         }
     }
