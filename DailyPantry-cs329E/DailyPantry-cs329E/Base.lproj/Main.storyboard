@@ -217,12 +217,19 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Wba-Sm-7BS">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="1zZ-fC-c51">
-                            <connections>
-                                <action selector="addToPantry:" destination="IDe-EI-m4z" id="8Yi-EY-Ceb"/>
-                                <segue destination="rSH-3A-kbX" kind="show" id="hqb-IE-URj"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="plus" catalog="system" id="1zZ-fC-c51">
+                                <connections>
+                                    <action selector="addToPantry:" destination="IDe-EI-m4z" id="8Yi-EY-Ceb"/>
+                                    <segue destination="rSH-3A-kbX" kind="show" id="hqb-IE-URj"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Clear" id="KIh-GM-PCg">
+                                <connections>
+                                    <action selector="clearPantry:" destination="IDe-EI-m4z" id="RRk-Q1-8b7"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PCW-fD-DjG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -256,9 +263,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csU-5m-H8q">
-                                <rect key="frame" x="197.66666666666666" y="801" width="33" height="34"/>
+                                <rect key="frame" x="184" y="801" width="60" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Add"/>
+                                <state key="normal" title="Update"/>
+                                <connections>
+                                    <action selector="addItem:" destination="rSH-3A-kbX" eventType="touchUpInside" id="uyC-Ob-Z7H"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dov-Ei-Ejy">
                                 <rect key="frame" x="163" y="685" width="50" height="34"/>

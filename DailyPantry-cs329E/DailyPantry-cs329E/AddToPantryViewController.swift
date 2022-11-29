@@ -17,8 +17,10 @@ class AddToPantryViewController: UIViewController, UIPickerViewDelegate, UIPicke
     var groceryItems:[NSManagedObject] = []
     var selectedItems:[NSManagedObject] = []
     
+    var selectedItem = NSManagedObject()
+    
     var catSelected = "Meat"
-    var qtyVal = 1
+    var qtyVal = 0
     
     @IBOutlet weak var itemPicker: UIPickerView!
     @IBOutlet weak var catPicker: UIPickerView!
@@ -32,9 +34,6 @@ class AddToPantryViewController: UIViewController, UIPickerViewDelegate, UIPicke
         catPicker.dataSource = self
         itemPicker.delegate = self
         itemPicker.dataSource = self
-        
-        quantityField.text = "\(qtyVal)"
-        stepper.value = Double(qtyVal)
         
         groceryItems = retrieveItems()
         getItems()
@@ -65,6 +64,13 @@ class AddToPantryViewController: UIViewController, UIPickerViewDelegate, UIPicke
             catSelected = categories[row]
             selectedItems = []
             getItems()
+            itemPicker.reloadAllComponents()
+        }
+        else{
+            selectedItem = selectedItems[row]
+            qtyVal = selectedItem.value(forKey: "qty") as! Int
+            stepper.value = Double(qtyVal)
+            quantityField.text = "\(qtyVal)"
             itemPicker.reloadAllComponents()
         }
     }
@@ -103,6 +109,15 @@ class AddToPantryViewController: UIViewController, UIPickerViewDelegate, UIPicke
                 selectedItems.append(item)
             }
         }
+        
+        selectedItems.sort{
+            ($0.value(forKey: "name") as! String) < ($1.value(forKey: "name") as! String)
+        }
+        
+        selectedItem = selectedItems[0]
+        qtyVal = selectedItem.value(forKey: "qty") as! Int
+        stepper.value = Double(qtyVal)
+        quantityField.text = "\(qtyVal)"
     }
     
     @IBAction func stepChange(_ sender: Any) {
@@ -116,6 +131,13 @@ class AddToPantryViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
     
     
+    @IBAction func addItem(_ sender: Any) {
+        // update qty of item
+        selectedItem.setValue(qtyVal, forKey: "qty")
+        saveContext()
+        
+        
+    }
     
     
 
