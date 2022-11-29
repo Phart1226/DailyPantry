@@ -155,9 +155,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="eventCell" textLabel="kkA-q2-iDc" style="IBUITableViewCellStyleDefault" id="Xfd-3w-ZAc">
-
-                                        <rect key="frame" x="0.0" y="50" width="388" height="43.666667938232422"/>
-
+                                        <rect key="frame" x="0.0" y="28" width="388" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xfd-3w-ZAc" id="SnN-fJ-cxo">
                                             <rect key="frame" x="0.0" y="0.0" width="388" height="43.666667938232422"/>
@@ -320,6 +318,20 @@
                                 <segue destination="ZA9-YP-cc7" kind="show" identifier="AddRecipeSegueIdentifier" id="vps-b9-wMW"/>
                             </connections>
                         </barButtonItem>
+                    <navigationItem key="navigationItem" id="Wba-Sm-7BS">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="plus" catalog="system" id="1zZ-fC-c51">
+                                <connections>
+                                    <action selector="addToPantry:" destination="IDe-EI-m4z" id="8Yi-EY-Ceb"/>
+                                    <segue destination="rSH-3A-kbX" kind="show" id="hqb-IE-URj"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Clear" id="KIh-GM-PCg">
+                                <connections>
+                                    <action selector="clearPantry:" destination="IDe-EI-m4z" id="RRk-Q1-8b7"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="recipeListTableView" destination="cb7-cL-mQj" id="eDa-MN-mcB"/>
@@ -486,37 +498,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="234" id="viQ-Zp-erp"/>
                                 </constraints>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddedIngredientCell" textLabel="Qsk-Kz-wzf" detailTextLabel="1et-nY-1So" rowHeight="55" style="IBUITableViewCellStyleValue1" id="Hww-JX-NHj">
-                                        <rect key="frame" x="0.0" y="50" width="388" height="55"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hww-JX-NHj" id="UjF-Cj-M3Z">
-                                            <rect key="frame" x="0.0" y="0.0" width="388" height="55"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qsk-Kz-wzf">
-                                                    <rect key="frame" x="20" y="21" width="25" height="14.333333333333334"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1et-nY-1So">
-                                                    <rect key="frame" x="335.33333333333331" y="21" width="32.666666666666664" height="14.333333333333334"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aao-oi-3ZA">
-                                <rect key="frame" x="186.66666666666666" y="797.66666666666663" width="54.666666666666657" height="31.333333333333371"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Add"/>
                                 <connections>
                                     <action selector="addButtonPressed:" destination="ZA9-YP-cc7" eventType="touchUpInside" id="d68-Gd-IgJ"/>
                                 </connections>
