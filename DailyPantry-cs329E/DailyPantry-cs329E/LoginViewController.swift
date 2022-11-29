@@ -18,8 +18,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         passwordText.isSecureTextEntry = true
-        
-        startObserving(&UIStyleManager.shared)
 
 //        Auth.auth().addStateDidChangeListener() {
 //            auth, user in

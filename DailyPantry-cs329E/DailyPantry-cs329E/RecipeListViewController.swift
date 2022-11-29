@@ -61,9 +61,9 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
             NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
             abort()
         }
-        return(fetchedResults)!
         startObserving(&UIStyleManager.shared)
-
+        return(fetchedResults)!
+        
     }
 
 }
