@@ -22,5 +22,14 @@
         <element name="StoredIngredient" positionX="-45" positionY="0" width="128" height="104"/>
         <element name="StoredRecipe" positionX="-9" positionY="63" width="128" height="89"/>
         <element name="StoredQty" positionX="27" positionY="117" width="128" height="74"/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20G918" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="UserProfile" representedClassName="UserProfile" syncable="YES" codeGenerationType="class">
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="password" optional="YES" attributeType="String"/>
+        <attribute name="profilePic" optional="YES" attributeType="Binary"/>
+    </entity>
+    <elements>
+        <element name="UserProfile" positionX="-63" positionY="-18" width="128" height="89"/>
     </elements>
 </model>

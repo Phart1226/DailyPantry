@@ -7,6 +7,10 @@
 
 import UIKit
 import FirebaseAuth
+import CoreData
+
+let appDelegate = UIApplication.shared.delegate as! AppDelegate
+let context = appDelegate.persistentContainer.viewContext
 
 var currentUser = ""
 
@@ -78,6 +82,7 @@ class LoginViewController: UIViewController {
                 } else {
                     self.errorLabel.text = ""
                     currentUser = emailField.text!
+                    self.storeUser(email:emailField.text!,password:passwordField.text!)
                     self.performSegue(withIdentifier: "login", sender: Any?.self)
                 }
             }
@@ -94,5 +99,52 @@ class LoginViewController: UIViewController {
         
     }
     
+    func storeUser(email:String, password:String) {
+        
+        let user = NSEntityDescription.insertNewObject(forEntityName: "UserProfile", into: context)
+        
+        user.setValue(email, forKey: "email")
+        user.setValue("", forKey: "name")
+        user.setValue(UIImage(named: "ut.png")!.pngData(), forKey: "profilePic")
+        user.setValue(password, forKey: "password")
+        
+        saveContext()
+        
+        currentUser = email
+    }
+    
+    func saveContext () {
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
+    }
+    
+    func clearCoreData() {
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserProfile")
+        var fetchedResults:[NSManagedObject]
+        
+        do {
+            try fetchedResults = context.fetch(request) as! [NSManagedObject]
+            
+            if fetchedResults.count > 0 {
+                for result:AnyObject in fetchedResults {
+                    context.delete(result as! NSManagedObject)
+                }
+            }
+            saveContext()
+            
+        } catch {
+            // if an error occurs
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+        
+    }
 }
-
