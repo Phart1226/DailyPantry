@@ -70,21 +70,35 @@ class LoginViewController: UIViewController {
             tfPassword.placeholder = "Enter your password"
         }
         
-        let saveAction = UIAlertAction(title: "Save", style: .default) {
+        alert.addTextField() {
+            tfConfPassword in
+            tfConfPassword.isSecureTextEntry = true
+            tfConfPassword.placeholder = "Confirm password"
+        }
+        
+        let saveAction = UIAlertAction(title: "Create", style: .default) {
             _ in
             let emailField = alert.textFields![0]
             let passwordField = alert.textFields![1]
+            let conPassField = alert.textFields![2]
             
-            Auth.auth().createUser(withEmail: emailField.text!, password: passwordField.text!) {
-                authResult, error in
-                if let error = error as NSError? {
-                    self.errorLabel.text = "\(error.localizedDescription)"
-                } else {
-                    self.errorLabel.text = ""
-                    currentUser = emailField.text!
-                    self.storeUser(email:emailField.text!,password:passwordField.text!)
-                    self.performSegue(withIdentifier: "login", sender: Any?.self)
+            if (passwordField.text!) == (conPassField.text!) {
+            
+                Auth.auth().createUser(withEmail: emailField.text!, password: passwordField.text!) {
+                    authResult, error in
+                    if let error = error as NSError? {
+                        self.errorLabel.text = "\(error.localizedDescription)"
+                    } else {
+                        self.errorLabel.text = ""
+                        currentUser = emailField.text!
+                        self.storeUser(email:emailField.text!,password:passwordField.text!)
+                        self.performSegue(withIdentifier: "login", sender: Any?.self)
+                    }
                 }
+            }else{
+                let innerAlert = UIAlertController(title: "Error", message: "Passwords do not match", preferredStyle: .alert)
+                innerAlert.addAction(UIAlertAction(title: "OK", style: .default, handler:nil))
+                self.present(innerAlert, animated: true, completion: nil)
             }
             
             
