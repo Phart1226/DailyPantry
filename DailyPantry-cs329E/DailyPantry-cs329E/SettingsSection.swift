@@ -5,6 +5,8 @@
 //  Created by Administrator on 11/9/22.
 //
 
+import UIKit
+
 protocol SectionType: CustomStringConvertible {
     var containsSwitch: Bool { get }
 }
@@ -43,7 +45,7 @@ enum AppOption: Int, CaseIterable, SectionType{
     case notifications
     
     var containsSwitch: Bool {
-        switch self{
+        switch self {
         case .darkMode: return true
         case .stylisticFont: return true
         case .notifications: return true
@@ -51,7 +53,7 @@ enum AppOption: Int, CaseIterable, SectionType{
     }
     
     var description: String{
-        switch self{
+        switch self {
         case .darkMode: return "Dark Mode"
         case .stylisticFont: return "Stylistic Font"
         case .notifications: return "Notifications"
