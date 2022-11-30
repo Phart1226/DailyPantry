@@ -8,6 +8,8 @@
 import UIKit
 import FirebaseAuth
 
+var currentUser = ""
+
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailText: UITextField!
@@ -42,6 +44,9 @@ class LoginViewController: UIViewController {
                 self.errorLabel.text = "\(error.localizedDescription)"
             } else {
                 self.errorLabel.text = ""
+                currentUser = self.emailText.text!
+                self.performSegue(withIdentifier: "login", sender: Any?.self)
+                
             }
         }
     }
@@ -72,8 +77,12 @@ class LoginViewController: UIViewController {
                     self.errorLabel.text = "\(error.localizedDescription)"
                 } else {
                     self.errorLabel.text = ""
+                    currentUser = emailField.text!
+                    self.performSegue(withIdentifier: "login", sender: Any?.self)
                 }
             }
+            
+            
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
