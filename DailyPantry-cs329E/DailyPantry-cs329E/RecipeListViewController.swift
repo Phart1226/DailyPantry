@@ -37,6 +37,30 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+     
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "StoredRecipe")
+            var fetchedResults:[NSManagedObject]
+            
+            do {
+                try fetchedResults = context.fetch(request) as! [NSManagedObject]
+                
+                context.delete(fetchedResults[indexPath.row] as NSManagedObject)
+    
+                saveContext()
+                
+                recipeListTableView.reloadData()
+                
+            } catch {
+                // if an error occurs
+                let nserror = error as NSError
+                NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+                abort()
+            }
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddRecipeSegueIdentifier",
         let destination = segue.destination as? AddRecipeViewController {
@@ -63,6 +87,17 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
             abort()
         }
         return(fetchedResults)!
+    }
+    
+    func saveContext () {
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
     }
 
 }
