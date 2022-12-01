@@ -82,7 +82,6 @@ class AddRecipeViewController: UIViewController, UITableViewDelegate, UITableVie
         recipe.qty = NSSet(array: qtyArray)
         
         saveContext()
-        
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
