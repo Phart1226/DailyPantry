@@ -43,8 +43,6 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         // setting selected date to current day
         formatter.dateFormat = "dd-MMM-YYYY"
         dateSelected = formatter.string(from: Date())
-        
-        startObserving(&UIStyleManager.shared)
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
