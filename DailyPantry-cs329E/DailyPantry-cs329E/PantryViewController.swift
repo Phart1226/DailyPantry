@@ -72,6 +72,7 @@ class PantryViewController: UIViewController {
             self.saveContext()
             self.getPantryItems()
             self.tableView.reloadData()
+            
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
@@ -83,19 +84,34 @@ class PantryViewController: UIViewController {
     }
     
     func getPantryItems(){
-        print("hi")
         let pantryItems = retrievePantry()
-        if (currentPantryItems["Meat"]?.names.count)! == 0{
-            for item in pantryItems{
-                currentPantryItems[(item.value(forKey: "catagory") as! String)]?.names.append((item.value(forKey: "name") as! String))
-                currentPantryItems[(item.value(forKey: "catagory") as! String)]?.qtys.append((item.value(forKey: "amountAvailable") as! Int))
-                
+        if pantryItems.count != 0 {
+            if (currentPantryItems["Meat"]?.names.count)! == 0{
+                for item in pantryItems{
+                    currentPantryItems[(item.value(forKey: "catagory") as! String)]?.names.append((item.value(forKey: "name") as! String))
+                    currentPantryItems[(item.value(forKey: "catagory") as! String)]?.qtys.append((item.value(forKey: "amountAvailable") as! Int))
+                    
+                }
+            }else{
+                for item in pantryItems{
+                    let spot = currentPantryItems[(item.value(forKey: "catagory") as! String)]?.names.firstIndex(of: (item.value(forKey: "name") as! String))
+                    currentPantryItems[(item.value(forKey: "catagory") as! String)]?.qtys[spot!] = (item.value(forKey: "amountAvailable") as! Int)
+                    
+                }
             }
+        // add in pantry items if this is the first time a user is using the app or for some reason their pantry got completely cleared
         }else{
-            for item in pantryItems{
-                let spot = currentPantryItems[(item.value(forKey: "catagory") as! String)]?.names.firstIndex(of: (item.value(forKey: "name") as! String))
-                currentPantryItems[(item.value(forKey: "catagory") as! String)]?.qtys[spot!] = (item.value(forKey: "amountAvailable") as! Int)
-                
+            for (catagory, nameList) in initPantry{
+                for name in nameList{
+                    let item = NSEntityDescription.insertNewObject(forEntityName: "StoredIngredient", into: context)
+                    
+                    item.setValue(name, forKey: "name")
+                    item.setValue(catagory, forKey: "catagory")
+                    item.setValue(0, forKey: "amountAvailable")
+                    
+                    // commit the changes
+                    saveContext()
+                }
             }
         }
     }

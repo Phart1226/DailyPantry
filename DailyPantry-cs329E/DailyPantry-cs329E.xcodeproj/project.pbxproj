@@ -38,6 +38,7 @@
 		84E16D782936D75B00B4016A /* AddToPantryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E16D772936D75B00B4016A /* AddToPantryViewController.swift */; };
 		84E16D7A2937086400B4016A /* RecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E16D792937086400B4016A /* RecipeListViewController.swift */; };
 		84E16D7C2937096600B4016A /* AddRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E16D7B2937096600B4016A /* AddRecipeViewController.swift */; };
+		84E16D7E29391EC100B4016A /* PantryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E16D7D29391EBF00B4016A /* PantryItems.swift */; };
 		84FAE1F128F9E6CA00BD4F64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAE1F028F9E6CA00BD4F64 /* AppDelegate.swift */; };
 		84FAE1F328F9E6CA00BD4F64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAE1F228F9E6CA00BD4F64 /* SceneDelegate.swift */; };
 		84FAE1F528F9E6CA00BD4F64 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAE1F428F9E6CA00BD4F64 /* LoginViewController.swift */; };
@@ -77,6 +78,7 @@
 		84E16D772936D75B00B4016A /* AddToPantryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToPantryViewController.swift; sourceTree = "<group>"; };
 		84E16D792937086400B4016A /* RecipeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewController.swift; sourceTree = "<group>"; };
 		84E16D7B2937096600B4016A /* AddRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeViewController.swift; sourceTree = "<group>"; };
+		84E16D7D29391EBF00B4016A /* PantryItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryItems.swift; sourceTree = "<group>"; };
 		84FAE1ED28F9E6CA00BD4F64 /* DailyPantry-cs329E.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DailyPantry-cs329E.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FAE1F028F9E6CA00BD4F64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84FAE1F228F9E6CA00BD4F64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				84E16D792937086400B4016A /* RecipeListViewController.swift */,
 				84188D982903394400F0BECD /* CalendarViewController.swift */,
 				84FAE1F628F9E6CA00BD4F64 /* Main.storyboard */,
+				84E16D7D29391EBF00B4016A /* PantryItems.swift */,
 				84E16D4D2936C82A00B4016A /* IngredientTableViewCell.swift */,
 				84E16D772936D75B00B4016A /* AddToPantryViewController.swift */,
 				84E16D522936C82A00B4016A /* Ingredient.swift */,
@@ -267,6 +270,7 @@
 				84E16D7C2937096600B4016A /* AddRecipeViewController.swift in Sources */,
 				84C17B1429219C8F00F33A9E /* PantryViewController.swift in Sources */,
 				84E16D5E2936C82B00B4016A /* UIStyleManager.swift in Sources */,
+				84E16D7E29391EC100B4016A /* PantryItems.swift in Sources */,
 				84FAE1F528F9E6CA00BD4F64 /* LoginViewController.swift in Sources */,
 				84E16D6A2936C86F00B4016A /* StoredIngredient+CoreDataClass.swift in Sources */,
 				84FAE1F128F9E6CA00BD4F64 /* AppDelegate.swift in Sources */,

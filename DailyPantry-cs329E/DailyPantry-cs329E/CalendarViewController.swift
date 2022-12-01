@@ -7,6 +7,7 @@
 
 import UIKit
 import FSCalendar
+import CoreData
 
 class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource, UITableViewDelegate, UITableViewDataSource{
     
