@@ -17,7 +17,29 @@
 		84B9982B28FC85AC00160DD8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B9982A28FC85AC00160DD8 /* GoogleService-Info.plist */; };
 		84C17B1429219C8F00F33A9E /* PantryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C17B1329219C8F00F33A9E /* PantryViewController.swift */; };
 		84C17B1729219EF600F33A9E /* PantrySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C17B1629219EF600F33A9E /* PantrySection.swift */; };
-		84D033F0291434C500DB0838 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 84D033EF291434C500DB0838 /* FSCalendar */; };
+		84E16D582936C82B00B4016A /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E16D4D2936C82A00B4016A /* IngredientTableViewCell.swift */; };
+		84E16D592936C82B00B4016A /* CustomNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E16D4E2936C82A00B4016A /* CustomNavController.swift */; };
+		84E16D5A2936C82B00B4016A /* RecipeCatagoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E16D4F2936C82A00B4016A /* RecipeCatagoriesViewController.swift */; };
+		84E16D5B2936C82B00B4016A /* DailyPantry_cs329E.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84E16D502936C82A00B4016A /* DailyPantry_cs329E.xcdatamodeld */; };
+		84E16D5C2936C82B00B4016A /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E16D522936C82A00B4016A /* Ingredient.swift */; };
+		84E16D5D2936C82B00B4016A /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E16D532936C82B00B4016A /* RecipeViewController.swift */; };
+		84E16D5E2936C82B00B4016A /* UIStyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E16D542936C82B00B4016A /* UIStyleManager.swift */; };
+		84E16D5F2936C82B00B4016A /* WeakStyleObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E16D552936C82B00B4016A /* WeakStyleObserver.swift */; };
+		84E16D602936C82B00B4016A /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E16D562936C82B00B4016A /* Recipe.swift */; };
+		84E16D612936C82B00B4016A /* UIStyleObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E16D572936C82B00B4016A /* UIStyleObserver.swift */; };
+		84E16D682936C86F00B4016A /* StoredQty+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E16D622936C86F00B4016A /* StoredQty+CoreDataProperties.swift */; };
+		84E16D692936C86F00B4016A /* StoredIngredient+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E16D632936C86F00B4016A /* StoredIngredient+CoreDataProperties.swift */; };
+		84E16D6A2936C86F00B4016A /* StoredIngredient+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E16D642936C86F00B4016A /* StoredIngredient+CoreDataClass.swift */; };
+		84E16D6B2936C86F00B4016A /* StoredRecipe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E16D652936C86F00B4016A /* StoredRecipe+CoreDataClass.swift */; };
+		84E16D6C2936C86F00B4016A /* StoredRecipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E16D662936C86F00B4016A /* StoredRecipe+CoreDataProperties.swift */; };
+		84E16D6D2936C86F00B4016A /* StoredQty+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E16D672936C86F00B4016A /* StoredQty+CoreDataClass.swift */; };
+		84E16D702936D15200B4016A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 84E16D6F2936D15200B4016A /* FirebaseAuth */; };
+		84E16D732936D1AE00B4016A /* CalendarKit in Frameworks */ = {isa = PBXBuildFile; productRef = 84E16D722936D1AE00B4016A /* CalendarKit */; };
+		84E16D762936D1F300B4016A /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 84E16D752936D1F300B4016A /* FSCalendar */; };
+		84E16D782936D75B00B4016A /* AddToPantryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E16D772936D75B00B4016A /* AddToPantryViewController.swift */; };
+		84E16D7A2937086400B4016A /* RecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E16D792937086400B4016A /* RecipeListViewController.swift */; };
+		84E16D7C2937096600B4016A /* AddRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E16D7B2937096600B4016A /* AddRecipeViewController.swift */; };
+		84E16D7E29391EC100B4016A /* PantryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E16D7D29391EBF00B4016A /* PantryItems.swift */; };
 		84FAE1F128F9E6CA00BD4F64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAE1F028F9E6CA00BD4F64 /* AppDelegate.swift */; };
 		84FAE1F328F9E6CA00BD4F64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAE1F228F9E6CA00BD4F64 /* SceneDelegate.swift */; };
 		84FAE1F528F9E6CA00BD4F64 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAE1F428F9E6CA00BD4F64 /* LoginViewController.swift */; };
@@ -50,6 +72,26 @@
 		84B9982D28FC877C00160DD8 /* DailyPantry-cs329E.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DailyPantry-cs329E.entitlements"; sourceTree = "<group>"; };
 		84C17B1329219C8F00F33A9E /* PantryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryViewController.swift; sourceTree = "<group>"; };
 		84C17B1629219EF600F33A9E /* PantrySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantrySection.swift; sourceTree = "<group>"; };
+		84E16D4D2936C82A00B4016A /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
+		84E16D4E2936C82A00B4016A /* CustomNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavController.swift; sourceTree = "<group>"; };
+		84E16D4F2936C82A00B4016A /* RecipeCatagoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeCatagoriesViewController.swift; sourceTree = "<group>"; };
+		84E16D512936C82A00B4016A /* DailyPantry_cs329E.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DailyPantry_cs329E.xcdatamodel; sourceTree = "<group>"; };
+		84E16D522936C82A00B4016A /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		84E16D532936C82B00B4016A /* RecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		84E16D542936C82B00B4016A /* UIStyleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStyleManager.swift; sourceTree = "<group>"; };
+		84E16D552936C82B00B4016A /* WeakStyleObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakStyleObserver.swift; sourceTree = "<group>"; };
+		84E16D562936C82B00B4016A /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		84E16D572936C82B00B4016A /* UIStyleObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStyleObserver.swift; sourceTree = "<group>"; };
+		84E16D622936C86F00B4016A /* StoredQty+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StoredQty+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		84E16D632936C86F00B4016A /* StoredIngredient+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StoredIngredient+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		84E16D642936C86F00B4016A /* StoredIngredient+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StoredIngredient+CoreDataClass.swift"; sourceTree = "<group>"; };
+		84E16D652936C86F00B4016A /* StoredRecipe+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StoredRecipe+CoreDataClass.swift"; sourceTree = "<group>"; };
+		84E16D662936C86F00B4016A /* StoredRecipe+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StoredRecipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		84E16D672936C86F00B4016A /* StoredQty+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StoredQty+CoreDataClass.swift"; sourceTree = "<group>"; };
+		84E16D772936D75B00B4016A /* AddToPantryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToPantryViewController.swift; sourceTree = "<group>"; };
+		84E16D792937086400B4016A /* RecipeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewController.swift; sourceTree = "<group>"; };
+		84E16D7B2937096600B4016A /* AddRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeViewController.swift; sourceTree = "<group>"; };
+		84E16D7D29391EBF00B4016A /* PantryItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryItems.swift; sourceTree = "<group>"; };
 		84FAE1ED28F9E6CA00BD4F64 /* DailyPantry-cs329E.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DailyPantry-cs329E.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FAE1F028F9E6CA00BD4F64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84FAE1F228F9E6CA00BD4F64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,13 +161,15 @@
 				84FAE1F428F9E6CA00BD4F64 /* LoginViewController.swift */,
 				84188D982903394400F0BECD /* CalendarViewController.swift */,
 				84FAE1F628F9E6CA00BD4F64 /* Main.storyboard */,
-				BB5844E5291472CB00FA3677 /* IngredientTableViewCell.swift */,
 				BBB002D82910904F004B23BD /* RecipeCatagoriesViewController.swift */,
 				BBB002DE2910930E004B23BD /* AddRecipeViewController.swift */,
-				BBB002E22911F084004B23BD /* Ingredient.swift */,
 				BBB002DA291092D2004B23BD /* RecipeViewController.swift */,
 				BBB002DC291092F6004B23BD /* RecipeListViewController.swift */,
-				BBB002D629108291004B23BD /* Recipe.swift */,
+				84E16D7D29391EBF00B4016A /* PantryItems.swift */,
+				84E16D4D2936C82A00B4016A /* IngredientTableViewCell.swift */,
+				84E16D772936D75B00B4016A /* AddToPantryViewController.swift */,
+				84E16D522936C82A00B4016A /* Ingredient.swift */,
+				84E16D562936C82B00B4016A /* Recipe.swift */,
 				84C17B1329219C8F00F33A9E /* PantryViewController.swift */,
 				84FAE1FC28F9E6CB00BD4F64 /* Assets.xcassets */,
 				84FAE1FE28F9E6CB00BD4F64 /* LaunchScreen.storyboard */,
@@ -241,7 +285,8 @@
 				84C17B1729219EF600F33A9E /* PantrySection.swift in Sources */,
 				84803808291B4AC500FC9152 /* SettingsCell.swift in Sources */,
 				84C17B1429219C8F00F33A9E /* PantryViewController.swift in Sources */,
-				BB0BB0A0292D685D00DF3725 /* StoredIngredient+CoreDataClass.swift in Sources */,
+				84E16D5E2936C82B00B4016A /* UIStyleManager.swift in Sources */,
+				84E16D7E29391EC100B4016A /* PantryItems.swift in Sources */,
 				84FAE1F528F9E6CA00BD4F64 /* LoginViewController.swift in Sources */,
 				BBB002DB291092D2004B23BD /* RecipeViewController.swift in Sources */,
 				BBB002D729108291004B23BD /* Recipe.swift in Sources */,

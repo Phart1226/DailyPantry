@@ -14,13 +14,15 @@
     </entity>
     <entity name="StoredRecipe" representedClassName="StoredRecipe" syncable="YES">
         <attribute name="catagory" optional="YES" attributeType="String"/>
+        <attribute name="dates" optional="YES" attributeType="Transformable"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="ingredient" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StoredIngredient" inverseName="recipe" inverseEntity="StoredIngredient"/>
         <relationship name="qty" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StoredQty" inverseName="recipe" inverseEntity="StoredQty"/>
     </entity>
     <elements>
         <element name="StoredIngredient" positionX="-45" positionY="0" width="128" height="104"/>
-        <element name="StoredRecipe" positionX="-9" positionY="63" width="128" height="89"/>
         <element name="StoredQty" positionX="27" positionY="117" width="128" height="74"/>
+        <element name="StoredRecipe" positionX="-9" positionY="63" width="128" height="104"/>
+        <element name="UserProfile" positionX="-9" positionY="90" width="128" height="89"/>
     </elements>
 </model>
