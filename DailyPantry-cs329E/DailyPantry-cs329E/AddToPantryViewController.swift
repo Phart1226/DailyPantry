@@ -8,6 +8,7 @@
 import UIKit
 import CoreData
 
+@available(iOS 15.0, *)
 class AddToPantryViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource  {
     var categories = ["Meat","Produce","Dairy","Spices","Snacks","Miscellaneous"]
     
@@ -34,6 +35,7 @@ class AddToPantryViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
         groceryItems = retrieveItems()
         getItems()
+        
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

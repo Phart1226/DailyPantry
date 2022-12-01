@@ -46,25 +46,29 @@ class UserInfoHeader: UIView {
         
         let profileImageDimension: CGFloat = 60
         
-        let user = setUser()
+        if currentUser != ""{
         
-        addSubview(profileImageView)
-        profileImageView.image = UIImage(data:(user.value(forKey: "profilePic")! as! Data))
-        profileImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        profileImageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
-        profileImageView.widthAnchor.constraint(equalToConstant: profileImageDimension).isActive = true
-        profileImageView.heightAnchor.constraint(equalToConstant: profileImageDimension).isActive = true
-        profileImageView.layer.cornerRadius = profileImageDimension / 2
-        
-        addSubview(usernameLabel)
-        usernameLabel.text = user.value(forKey: "name") as! String
-        usernameLabel.centerYAnchor.constraint(equalTo: profileImageView.centerYAnchor, constant: -10).isActive = true
-        usernameLabel.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 12).isActive = true
-        
-        addSubview(emailLabel)
-        emailLabel.text = currentUser
-        emailLabel.centerYAnchor.constraint(equalTo: profileImageView.centerYAnchor, constant: 10).isActive = true
-        emailLabel.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 12).isActive = true
+            let user = setUser()
+            
+            addSubview(profileImageView)
+            profileImageView.image = UIImage(data:(user.value(forKey: "profilePic")! as! Data))
+            profileImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+            profileImageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
+            profileImageView.widthAnchor.constraint(equalToConstant: profileImageDimension).isActive = true
+            profileImageView.heightAnchor.constraint(equalToConstant: profileImageDimension).isActive = true
+            profileImageView.layer.cornerRadius = profileImageDimension / 2
+            
+            addSubview(usernameLabel)
+            usernameLabel.text = user.value(forKey: "name") as! String
+            usernameLabel.centerYAnchor.constraint(equalTo: profileImageView.centerYAnchor, constant: -10).isActive = true
+            usernameLabel.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 12).isActive = true
+            
+            addSubview(emailLabel)
+            emailLabel.text = currentUser
+            emailLabel.centerYAnchor.constraint(equalTo: profileImageView.centerYAnchor, constant: 10).isActive = true
+            emailLabel.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 12).isActive = true
+            
+        }
         
 
         
