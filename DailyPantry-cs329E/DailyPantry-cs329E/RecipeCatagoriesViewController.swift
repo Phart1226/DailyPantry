@@ -17,8 +17,6 @@ class RecipeCatagoriesViewController: UIViewController, UITableViewDelegate, UIT
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        
-        startObserving(&UIStyleManager.shared)
         // Do any additional setup after loading the view.
     }
     
