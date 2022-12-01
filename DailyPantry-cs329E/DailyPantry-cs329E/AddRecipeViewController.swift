@@ -4,7 +4,6 @@
 //
 //  Created by Hamza Elsiesy on 10/31/22.
 //
-
 import UIKit
 import CoreData
 
@@ -29,8 +28,6 @@ class AddRecipeViewController: UIViewController, UITableViewDelegate, UITableVie
         addedTableView.dataSource = self
         searchBar.delegate = self
         filteredIngredients = retrieveIngredients()
-        startObserving(&UIStyleManager.shared)
-
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
