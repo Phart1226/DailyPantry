@@ -22,6 +22,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        startObserving(&UIStyleManager.shared)
     }
 
     // MARK: - Helper Functions
@@ -98,11 +99,18 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             // allows switch to be interacted with
             cell.contentView.isUserInteractionEnabled = false
         }
-        
+        //THIS IS MINE
+        cell.switchLabel = cell.sectionType!.description
         // set stylistic font to off for defualt setting
-//        if cell.sectionType!.description == "Stylistic Font"{
-//            cell.switchControl.isOn = false
-//        }
+        if cell.sectionType!.description == "Stylistic Font"{
+            cell.switchControl.isOn = false
+        }
+        
+        if cell.sectionType!.description == "Dark Mode"{
+            cell.switchControl.isOn = UIStyleManager.shared.currentStyle == .dark
+        }
+        
+        
     
         return cell
     }
@@ -126,4 +134,3 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     
 }
-

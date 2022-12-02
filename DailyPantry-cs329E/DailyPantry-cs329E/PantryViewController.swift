@@ -7,10 +7,12 @@
 
 import UIKit
 import Foundation
+import CoreData
 
 struct ExpandableNames{
     var isExpanded: Bool
     var names: [String]
+    var qtys: [Int]
 }
 
 private let reuseIdentifier = "PantryCell"
@@ -18,11 +20,18 @@ private let reuseIdentifier = "PantryCell"
 class PantryViewController: UIViewController {
     
     var tableView: UITableView!
-    var tempMat = ["Meat": ExpandableNames(isExpanded: true, names: ["Turkey", "Beef"]), "Produce": ExpandableNames(isExpanded: true, names: ["Apple", "Banana", "Lettuce"]) , "Snacks": ExpandableNames(isExpanded: true, names: ["Chips", "Granola Bar"]), "Spices": ExpandableNames(isExpanded: true, names: ["Salt", "Pepper"])]
+    var currentPantryItems = ["Meat": ExpandableNames(isExpanded: true, names: [], qtys: []), "Produce": ExpandableNames(isExpanded: true, names: [], qtys: []) , "Snacks": ExpandableNames(isExpanded: true, names: [], qtys: []), "Spices": ExpandableNames(isExpanded: true, names: [], qtys: []), "Dairy": ExpandableNames(isExpanded: true, names: [], qtys: []), "Miscellaneous": ExpandableNames(isExpanded: true, names: [], qtys: [])]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        getPantryItems()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getPantryItems()
+        tableView.reloadData()
     }
 
     // MARK: - Helper Functions
@@ -158,21 +167,25 @@ extension PantryViewController: UITableViewDelegate, UITableViewDataSource {
         case 1:
             section = "Produce"
         case 2:
-            section = "Snacks"
+            section = "Dairy"
         case 3:
+            section = "Snacks"
+        case 4:
             section = "Spices"
+        case 5:
+            section = "Miscellaneous"
         default:
             section = ""
         }
         
         var indexPaths = [IndexPath]()
-        for item in tempMat[section]!.names.indices{
+        for item in currentPantryItems[section]!.names.indices{
             let indexPath = IndexPath(row: item, section: button.tag)
             indexPaths.append(indexPath)
         }
         
-        let isExpanded = tempMat[section]?.isExpanded
-        tempMat[section]?.isExpanded = !(isExpanded!)
+        let isExpanded = currentPantryItems[section]?.isExpanded
+        currentPantryItems[section]?.isExpanded = !(isExpanded!)
         
         if isExpanded!{
             tableView.deleteRows(at: indexPaths, with: .fade)
@@ -189,12 +202,14 @@ extension PantryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let section = PantrySection(rawValue: section) else { return 0}
         
-        if tempMat[section.description]!.isExpanded{
+        if currentPantryItems[section.description]!.isExpanded{
             switch section{
-            case .Meat: return tempMat["Meat"]!.names.count
-            case .Produce: return tempMat["Produce"]!.names.count
-            case .Snacks: return tempMat["Snacks"]!.names.count
-            case .Spices: return tempMat["Spices"]!.names.count
+            case .Meat: return currentPantryItems["Meat"]!.names.count
+            case .Produce: return currentPantryItems["Produce"]!.names.count
+            case .Dairy: return currentPantryItems["Dairy"]!.names.count
+            case .Snacks: return currentPantryItems["Snacks"]!.names.count
+            case .Spices: return currentPantryItems["Spices"]!.names.count
+            case .Miscellaneous: return currentPantryItems["Miscellaneous"]!.names.count
             }
         }
         else{
@@ -208,29 +223,82 @@ extension PantryViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         guard let section = PantrySection(rawValue: indexPath.section) else { return UITableViewCell()}
         
+        var itemQty: Int
         switch section{
         case .Meat:
-            cell.textLabel?.text = tempMat["Meat"]!.names[indexPath.row]
+            cell.textLabel?.text = currentPantryItems["Meat"]!.names[indexPath.row]
+            itemQty = currentPantryItems["Meat"]!.qtys[indexPath.row]
         case .Produce:
-            cell.textLabel?.text = tempMat["Produce"]!.names[indexPath.row]
+            cell.textLabel?.text = currentPantryItems["Produce"]!.names[indexPath.row]
+            itemQty = currentPantryItems["Produce"]!.qtys[indexPath.row]
+        case .Dairy:
+            cell.textLabel?.text = currentPantryItems["Dairy"]!.names[indexPath.row]
+            itemQty = currentPantryItems["Dairy"]!.qtys[indexPath.row]
         case .Snacks:
-            cell.textLabel?.text = tempMat["Snacks"]!.names[indexPath.row]
+            cell.textLabel?.text = currentPantryItems["Snacks"]!.names[indexPath.row]
+            itemQty = currentPantryItems["Snacks"]!.qtys[indexPath.row]
         case .Spices:
-            cell.textLabel?.text = tempMat["Spices"]!.names[indexPath.row]
+            cell.textLabel?.text = currentPantryItems["Spices"]!.names[indexPath.row]
+            itemQty = currentPantryItems["Spices"]!.qtys[indexPath.row]
+        case .Miscellaneous:
+            cell.textLabel?.text = currentPantryItems["Miscellaneous"]!.names[indexPath.row]
+            itemQty = currentPantryItems["Miscellaneous"]!.qtys[indexPath.row]
 
+        }
+        
+        if itemQty == 0 {
+            cell.backgroundColor = .darkGray
+        }else{
+            cell.backgroundColor = .white
         }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         // when select will show pop that tells number of that item in pantry and how many are used
+        guard let section = PantrySection(rawValue: indexPath.section) else {return}
+        var itemName = ""
+        var itemQty = 0
+        
+        switch section{
+        case .Meat:
+            itemName = currentPantryItems["Meat"]!.names[indexPath.row]
+            itemQty = currentPantryItems["Meat"]!.qtys[indexPath.row]
+        case .Produce:
+            itemName = currentPantryItems["Produce"]!.names[indexPath.row]
+            itemQty = currentPantryItems["Produce"]!.qtys[indexPath.row]
+        case .Dairy:
+            itemName = currentPantryItems["Dairy"]!.names[indexPath.row]
+            itemQty = currentPantryItems["Dairy"]!.qtys[indexPath.row]
+        case .Snacks:
+            itemName = currentPantryItems["Snacks"]!.names[indexPath.row]
+            itemQty = currentPantryItems["Snacks"]!.qtys[indexPath.row]
+        case .Spices:
+            itemName = currentPantryItems["Spices"]!.names[indexPath.row]
+            itemQty = currentPantryItems["Spices"]!.qtys[indexPath.row]
+        case .Miscellaneous:
+            itemName = currentPantryItems["Miscellaneous"]!.names[indexPath.row]
+            itemQty = currentPantryItems["Miscellaneous"]!.qtys[indexPath.row]
+        }
+        
+        let alert = UIAlertController(title: "ITEM: \(itemName)",
+                                      message: "Quantity in Pantry: \(itemQty)",
+                                      preferredStyle: .alert)
+        // if item is being used in recipe display which dates and meals it is used in
+        
+        let backAction = UIAlertAction(title: "Dismiss", style: .cancel)
+        
+        alert.addAction(backAction)
+        
+        present(alert, animated: true)
     }
     
     func tableView( _ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
-    
     
     
 }
