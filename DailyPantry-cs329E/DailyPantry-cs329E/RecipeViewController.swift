@@ -11,10 +11,13 @@ import CoreData
 class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var recipeLabel: UILabel!
+    @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var ingredientsTableView: UITableView!
 
     var delegate: UIViewController!
     var recipe: NSManagedObject!
+    var date:Date!
+    var today:Date!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +25,9 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Do any additional setup after loading the view.
         ingredientsTableView.delegate = self
         ingredientsTableView.dataSource = self
+        date = datePicker.date
+        today = datePicker.date
+        
         
         recipeLabel.text = (recipe.value(forKey: "name") as! String)
 
@@ -50,15 +56,103 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
         
     }
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func datePickerValueChanged(_ sender: Any) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MMM-yyyy"
+        date = datePicker.date
     }
-    */
+    
+    @IBAction func addToDayButtonPressed(_ sender: Any) {
+        if date >= today {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd-MMM-yyyy"
+            let formattedDate = formatter.string(from: date)
+            
+            let dates = retrieveDates()
+            
+            var recipeDate:RecipeDate!
+            
+            for i in dates{
+                if i.value(forKey: "date") as? String == formattedDate {
+                    recipeDate = i as? RecipeDate
+                }
+            }
+            if recipeDate == nil {
+                recipeDate = RecipeDate(context: context)
+                recipeDate.date = formattedDate
+                recipeDate.recipe = [recipe!]
+            } else {
+                recipeDate.recipe = recipeDate.recipe?.adding(recipe!) as NSSet?
+            }
+            
+            saveContext()
+        }
+    }
+    
+    func saveContext () {
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
+    }
+    
+    func retrieveDates() -> [NSManagedObject] {
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "RecipeDate")
+        var fetchedResults:[NSManagedObject]? = nil
+        
+        do {
+            try fetchedResults = context.fetch(request) as? [NSManagedObject]
+        } catch {
+            // if an error occurs
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+        return(fetchedResults)!
+    }
+    
+    func clearCoreData() {
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "RecipeDate")
+        var fetchedResults:[NSManagedObject]
+        
+        do {
+            try fetchedResults = context.fetch(request) as! [NSManagedObject]
+            
+            if fetchedResults.count > 0 {
+                for result:AnyObject in fetchedResults {
+                    context.delete(result as! NSManagedObject)
+                    print("\(result.value(forKey: "date")!) has been deleted")
+                }
+            }
+            saveContext()
+            
+        } catch {
+            // if an error occurs
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+        
+    }
 
+
+}
+
+extension NSManagedObject {
+    func addObject(value: NSManagedObject, forKey key: String) {
+        let items = self.mutableSetValue(forKey: key)
+        items.add(value)
+    }
+
+    func removeObject(value: NSManagedObject, forKey key: String) {
+        let items = self.mutableSetValue(forKey: key)
+        items.remove(value)
+    }
 }

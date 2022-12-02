@@ -20,6 +20,7 @@ extension StoredRecipe {
     @NSManaged public var catagory: String?
     @NSManaged public var ingredient: NSSet?
     @NSManaged public var qty: NSSet?
+    @NSManaged public var date: NSSet?
 
 }
 
