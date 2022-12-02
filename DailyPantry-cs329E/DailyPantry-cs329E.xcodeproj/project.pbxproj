@@ -8,23 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		84188D992903394400F0BECD /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84188D982903394400F0BECD /* CalendarViewController.swift */; };
-		84587C7A293979E300D01599 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 84587C79293979E300D01599 /* FSCalendar */; };
+		84587C7C293A72BA00D01599 /* UIStyleObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84587C7B293A72BA00D01599 /* UIStyleObserver.swift */; };
+		84587C7E293A72F000D01599 /* UIStyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84587C7D293A72F000D01599 /* UIStyleManager.swift */; };
+		84587C80293A733900D01599 /* WeakStyleObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84587C7F293A733900D01599 /* WeakStyleObserver.swift */; };
+		84587C85293A7E1700D01599 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 84587C84293A7E1700D01599 /* FirebaseAuth */; };
+		84587C88293A7EF400D01599 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 84587C87293A7EF400D01599 /* FSCalendar */; };
+		84587C8B293A7F6000D01599 /* CalendarKit in Frameworks */ = {isa = PBXBuildFile; productRef = 84587C8A293A7F6000D01599 /* CalendarKit */; };
+		84587C8F293A81B600D01599 /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84587C8E293A81B600D01599 /* IngredientTableViewCell.swift */; };
+		84587C94293A837300D01599 /* StoredIngredient+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84587C93293A837300D01599 /* StoredIngredient+CoreDataClass.swift */; };
+		84587C97293A852300D01599 /* DailyPantry_cs329E.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84587C95293A852200D01599 /* DailyPantry_cs329E.xcdatamodeld */; };
+		84587C99293A863700D01599 /* ut.png in Resources */ = {isa = PBXBuildFile; fileRef = 84587C98293A863700D01599 /* ut.png */; };
+		84587C9B293A888000D01599 /* AddToPantryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84587C9A293A888000D01599 /* AddToPantryViewController.swift */; };
 		84803808291B4AC500FC9152 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84803807291B4AC500FC9152 /* SettingsCell.swift */; };
 		8480380B291B4AD700FC9152 /* UserInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480380A291B4AD700FC9152 /* UserInfoHeader.swift */; };
 		8480380E291B4AEC00FC9152 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480380D291B4AEC00FC9152 /* SettingsViewController.swift */; };
 		84803812291C594F00FC9152 /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84803811291C594F00FC9152 /* SettingsSection.swift */; };
-		848CBDC329033605003362B5 /* CalendarKit in Frameworks */ = {isa = PBXBuildFile; productRef = 848CBDC229033605003362B5 /* CalendarKit */; };
-		84B9982828FC857300160DD8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 84B9982728FC857300160DD8 /* FirebaseAuth */; };
 		84B9982B28FC85AC00160DD8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B9982A28FC85AC00160DD8 /* GoogleService-Info.plist */; };
 		84C17B1429219C8F00F33A9E /* PantryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C17B1329219C8F00F33A9E /* PantryViewController.swift */; };
 		84C17B1729219EF600F33A9E /* PantrySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C17B1629219EF600F33A9E /* PantrySection.swift */; };
-		84E16D5E2936C82B00B4016A /* UIStyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E16D542936C82B00B4016A /* UIStyleManager.swift */; };
 		84E16D7E29391EC100B4016A /* PantryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E16D7D29391EBF00B4016A /* PantryItems.swift */; };
 		84FAE1F128F9E6CA00BD4F64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAE1F028F9E6CA00BD4F64 /* AppDelegate.swift */; };
 		84FAE1F328F9E6CA00BD4F64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAE1F228F9E6CA00BD4F64 /* SceneDelegate.swift */; };
 		84FAE1F528F9E6CA00BD4F64 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAE1F428F9E6CA00BD4F64 /* LoginViewController.swift */; };
 		84FAE1F828F9E6CA00BD4F64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FAE1F628F9E6CA00BD4F64 /* Main.storyboard */; };
-		84FAE1FB28F9E6CA00BD4F64 /* DailyPantry_cs329E.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84FAE1F928F9E6CA00BD4F64 /* DailyPantry_cs329E.xcdatamodeld */; };
 		84FAE1FD28F9E6CB00BD4F64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84FAE1FC28F9E6CB00BD4F64 /* Assets.xcassets */; };
 		84FAE20028F9E6CB00BD4F64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FAE1FE28F9E6CB00BD4F64 /* LaunchScreen.storyboard */; };
 		BB0BB0A1292D685D00DF3725 /* StoredIngredient+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BB09D292D685D00DF3725 /* StoredIngredient+CoreDataProperties.swift */; };
@@ -32,17 +38,22 @@
 		BB0BB0AC292D97C600DF3725 /* StoredRecipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BB0A8292D97C600DF3725 /* StoredRecipe+CoreDataProperties.swift */; };
 		BB0BB0AD292D97C600DF3725 /* StoredQty+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BB0A9292D97C600DF3725 /* StoredQty+CoreDataClass.swift */; };
 		BB0BB0AE292D97C600DF3725 /* StoredQty+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BB0AA292D97C600DF3725 /* StoredQty+CoreDataProperties.swift */; };
-		BB5844E6291472CB00FA3677 /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5844E5291472CB00FA3677 /* IngredientTableViewCell.swift */; };
-		BBB002D729108291004B23BD /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB002D629108291004B23BD /* Recipe.swift */; };
 		BBB002D92910904F004B23BD /* RecipeCatagoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB002D82910904F004B23BD /* RecipeCatagoriesViewController.swift */; };
 		BBB002DB291092D2004B23BD /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB002DA291092D2004B23BD /* RecipeViewController.swift */; };
 		BBB002DD291092F6004B23BD /* RecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB002DC291092F6004B23BD /* RecipeListViewController.swift */; };
 		BBB002DF2910930E004B23BD /* AddRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB002DE2910930E004B23BD /* AddRecipeViewController.swift */; };
-		BBB002E32911F084004B23BD /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB002E22911F084004B23BD /* Ingredient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		84188D982903394400F0BECD /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		84587C7B293A72BA00D01599 /* UIStyleObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStyleObserver.swift; sourceTree = "<group>"; };
+		84587C7D293A72F000D01599 /* UIStyleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStyleManager.swift; sourceTree = "<group>"; };
+		84587C7F293A733900D01599 /* WeakStyleObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakStyleObserver.swift; sourceTree = "<group>"; };
+		84587C8E293A81B600D01599 /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
+		84587C93293A837300D01599 /* StoredIngredient+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoredIngredient+CoreDataClass.swift"; sourceTree = "<group>"; };
+		84587C96293A852200D01599 /* DailyPantry_cs329E.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DailyPantry_cs329E.xcdatamodel; sourceTree = "<group>"; };
+		84587C98293A863700D01599 /* ut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ut.png; sourceTree = "<group>"; };
+		84587C9A293A888000D01599 /* AddToPantryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToPantryViewController.swift; sourceTree = "<group>"; };
 		84803807291B4AC500FC9152 /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		8480380A291B4AD700FC9152 /* UserInfoHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoHeader.swift; sourceTree = "<group>"; };
 		8480380D291B4AEC00FC9152 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -51,34 +62,26 @@
 		84B9982D28FC877C00160DD8 /* DailyPantry-cs329E.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DailyPantry-cs329E.entitlements"; sourceTree = "<group>"; };
 		84C17B1329219C8F00F33A9E /* PantryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryViewController.swift; sourceTree = "<group>"; };
 		84C17B1629219EF600F33A9E /* PantrySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantrySection.swift; sourceTree = "<group>"; };
-		84E16D4D2936C82A00B4016A /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
 		84E16D522936C82A00B4016A /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
-		84E16D542936C82B00B4016A /* UIStyleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStyleManager.swift; sourceTree = "<group>"; };
 		84E16D562936C82B00B4016A /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
-		84E16D772936D75B00B4016A /* AddToPantryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToPantryViewController.swift; sourceTree = "<group>"; };
 		84E16D7D29391EBF00B4016A /* PantryItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryItems.swift; sourceTree = "<group>"; };
 		84FAE1ED28F9E6CA00BD4F64 /* DailyPantry-cs329E.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DailyPantry-cs329E.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FAE1F028F9E6CA00BD4F64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84FAE1F228F9E6CA00BD4F64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		84FAE1F428F9E6CA00BD4F64 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		84FAE1F728F9E6CA00BD4F64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		84FAE1FA28F9E6CA00BD4F64 /* DailyPantry_cs329E.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DailyPantry_cs329E.xcdatamodel; sourceTree = "<group>"; };
 		84FAE1FC28F9E6CB00BD4F64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84FAE1FF28F9E6CB00BD4F64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84FAE20128F9E6CB00BD4F64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BB0BB09C292D685D00DF3725 /* StoredIngredient+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoredIngredient+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BB0BB09D292D685D00DF3725 /* StoredIngredient+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoredIngredient+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BB0BB0A7292D97C600DF3725 /* StoredRecipe+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoredRecipe+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BB0BB0A8292D97C600DF3725 /* StoredRecipe+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoredRecipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BB0BB0A9292D97C600DF3725 /* StoredQty+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoredQty+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BB0BB0AA292D97C600DF3725 /* StoredQty+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoredQty+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BB5844E5291472CB00FA3677 /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
-		BBB002D629108291004B23BD /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		BBB002D82910904F004B23BD /* RecipeCatagoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCatagoriesViewController.swift; sourceTree = "<group>"; };
 		BBB002DA291092D2004B23BD /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		BBB002DC291092F6004B23BD /* RecipeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewController.swift; sourceTree = "<group>"; };
 		BBB002DE2910930E004B23BD /* AddRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeViewController.swift; sourceTree = "<group>"; };
-		BBB002E22911F084004B23BD /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,32 +89,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84B9982828FC857300160DD8 /* FirebaseAuth in Frameworks */,
-				84587C7A293979E300D01599 /* FSCalendar in Frameworks */,
-				848CBDC329033605003362B5 /* CalendarKit in Frameworks */,
+				84587C85293A7E1700D01599 /* FirebaseAuth in Frameworks */,
+				84587C8B293A7F6000D01599 /* CalendarKit in Frameworks */,
+				84587C88293A7EF400D01599 /* FSCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		84587C77293976A500D01599 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				84E16D542936C82B00B4016A /* UIStyleManager.swift */,
-				BBB002D629108291004B23BD /* Recipe.swift */,
-				BB5844E5291472CB00FA3677 /* IngredientTableViewCell.swift */,
-				BBB002E22911F084004B23BD /* Ingredient.swift */,
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
 		84FAE1E428F9E6CA00BD4F64 = {
 			isa = PBXGroup;
 			children = (
 				84FAE1EF28F9E6CA00BD4F64 /* DailyPantry-cs329E */,
 				84FAE1EE28F9E6CA00BD4F64 /* Products */,
-				84587C77293976A500D01599 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,22 +127,26 @@
 				84C17B1629219EF600F33A9E /* PantrySection.swift */,
 				84FAE1F228F9E6CA00BD4F64 /* SceneDelegate.swift */,
 				84FAE1F428F9E6CA00BD4F64 /* LoginViewController.swift */,
+				84587C98293A863700D01599 /* ut.png */,
 				84188D982903394400F0BECD /* CalendarViewController.swift */,
 				84FAE1F628F9E6CA00BD4F64 /* Main.storyboard */,
+				84587C9A293A888000D01599 /* AddToPantryViewController.swift */,
+				84587C95293A852200D01599 /* DailyPantry_cs329E.xcdatamodeld */,
 				BBB002D82910904F004B23BD /* RecipeCatagoriesViewController.swift */,
 				BBB002DE2910930E004B23BD /* AddRecipeViewController.swift */,
+				84587C8E293A81B600D01599 /* IngredientTableViewCell.swift */,
 				BBB002DA291092D2004B23BD /* RecipeViewController.swift */,
 				BBB002DC291092F6004B23BD /* RecipeListViewController.swift */,
 				84E16D7D29391EBF00B4016A /* PantryItems.swift */,
-				84E16D4D2936C82A00B4016A /* IngredientTableViewCell.swift */,
-				84E16D772936D75B00B4016A /* AddToPantryViewController.swift */,
 				84E16D522936C82A00B4016A /* Ingredient.swift */,
 				84E16D562936C82B00B4016A /* Recipe.swift */,
 				84C17B1329219C8F00F33A9E /* PantryViewController.swift */,
+				84587C7F293A733900D01599 /* WeakStyleObserver.swift */,
+				84587C7D293A72F000D01599 /* UIStyleManager.swift */,
+				84587C7B293A72BA00D01599 /* UIStyleObserver.swift */,
 				84FAE1FC28F9E6CB00BD4F64 /* Assets.xcassets */,
 				84FAE1FE28F9E6CB00BD4F64 /* LaunchScreen.storyboard */,
 				84FAE20128F9E6CB00BD4F64 /* Info.plist */,
-				84FAE1F928F9E6CA00BD4F64 /* DailyPantry_cs329E.xcdatamodeld */,
 				84B9982A28FC85AC00160DD8 /* GoogleService-Info.plist */,
 			);
 			path = "DailyPantry-cs329E";
@@ -164,8 +159,8 @@
 				BB0BB0A8292D97C600DF3725 /* StoredRecipe+CoreDataProperties.swift */,
 				BB0BB0A9292D97C600DF3725 /* StoredQty+CoreDataClass.swift */,
 				BB0BB0AA292D97C600DF3725 /* StoredQty+CoreDataProperties.swift */,
-				BB0BB09C292D685D00DF3725 /* StoredIngredient+CoreDataClass.swift */,
 				BB0BB09D292D685D00DF3725 /* StoredIngredient+CoreDataProperties.swift */,
+				84587C93293A837300D01599 /* StoredIngredient+CoreDataClass.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -187,9 +182,9 @@
 			);
 			name = "DailyPantry-cs329E";
 			packageProductDependencies = (
-				84B9982728FC857300160DD8 /* FirebaseAuth */,
-				848CBDC229033605003362B5 /* CalendarKit */,
-				84587C79293979E300D01599 /* FSCalendar */,
+				84587C84293A7E1700D01599 /* FirebaseAuth */,
+				84587C87293A7EF400D01599 /* FSCalendar */,
+				84587C8A293A7F6000D01599 /* CalendarKit */,
 			);
 			productName = "DailyPantry-cs329E";
 			productReference = 84FAE1ED28F9E6CA00BD4F64 /* DailyPantry-cs329E.app */;
@@ -219,9 +214,9 @@
 			);
 			mainGroup = 84FAE1E428F9E6CA00BD4F64;
 			packageReferences = (
-				84B9982628FC857300160DD8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				848CBDC129033604003362B5 /* XCRemoteSwiftPackageReference "CalendarKit" */,
-				84587C78293979E300D01599 /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				84587C83293A7E1700D01599 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				84587C86293A7EF400D01599 /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				84587C89293A7F6000D01599 /* XCRemoteSwiftPackageReference "CalendarKit" */,
 			);
 			productRefGroup = 84FAE1EE28F9E6CA00BD4F64 /* Products */;
 			projectDirPath = "";
@@ -237,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84587C99293A863700D01599 /* ut.png in Resources */,
 				84FAE20028F9E6CB00BD4F64 /* LaunchScreen.storyboard in Resources */,
 				84B9982B28FC85AC00160DD8 /* GoogleService-Info.plist in Resources */,
 				84FAE1FD28F9E6CB00BD4F64 /* Assets.xcassets in Resources */,
@@ -252,30 +248,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				84188D992903394400F0BECD /* CalendarViewController.swift in Sources */,
+				84587C7C293A72BA00D01599 /* UIStyleObserver.swift in Sources */,
 				BBB002D92910904F004B23BD /* RecipeCatagoriesViewController.swift in Sources */,
 				BBB002DF2910930E004B23BD /* AddRecipeViewController.swift in Sources */,
 				BBB002DD291092F6004B23BD /* RecipeListViewController.swift in Sources */,
 				8480380B291B4AD700FC9152 /* UserInfoHeader.swift in Sources */,
-				84FAE1FB28F9E6CA00BD4F64 /* DailyPantry_cs329E.xcdatamodeld in Sources */,
 				BB0BB0AC292D97C600DF3725 /* StoredRecipe+CoreDataProperties.swift in Sources */,
 				BB0BB0AB292D97C600DF3725 /* StoredRecipe+CoreDataClass.swift in Sources */,
+				84587C94293A837300D01599 /* StoredIngredient+CoreDataClass.swift in Sources */,
 				84C17B1729219EF600F33A9E /* PantrySection.swift in Sources */,
 				84803808291B4AC500FC9152 /* SettingsCell.swift in Sources */,
 				84C17B1429219C8F00F33A9E /* PantryViewController.swift in Sources */,
-				84E16D5E2936C82B00B4016A /* UIStyleManager.swift in Sources */,
 				84E16D7E29391EC100B4016A /* PantryItems.swift in Sources */,
 				84FAE1F528F9E6CA00BD4F64 /* LoginViewController.swift in Sources */,
 				BBB002DB291092D2004B23BD /* RecipeViewController.swift in Sources */,
-				BBB002D729108291004B23BD /* Recipe.swift in Sources */,
-				BB5844E6291472CB00FA3677 /* IngredientTableViewCell.swift in Sources */,
+				84587C7E293A72F000D01599 /* UIStyleManager.swift in Sources */,
 				BB0BB0AD292D97C600DF3725 /* StoredQty+CoreDataClass.swift in Sources */,
 				84FAE1F128F9E6CA00BD4F64 /* AppDelegate.swift in Sources */,
 				84803812291C594F00FC9152 /* SettingsSection.swift in Sources */,
 				BB0BB0AE292D97C600DF3725 /* StoredQty+CoreDataProperties.swift in Sources */,
+				84587C97293A852300D01599 /* DailyPantry_cs329E.xcdatamodeld in Sources */,
+				84587C8F293A81B600D01599 /* IngredientTableViewCell.swift in Sources */,
 				8480380E291B4AEC00FC9152 /* SettingsViewController.swift in Sources */,
 				84FAE1F328F9E6CA00BD4F64 /* SceneDelegate.swift in Sources */,
-				BBB002E32911F084004B23BD /* Ingredient.swift in Sources */,
+				84587C9B293A888000D01599 /* AddToPantryViewController.swift in Sources */,
 				BB0BB0A1292D685D00DF3725 /* StoredIngredient+CoreDataProperties.swift in Sources */,
+				84587C80293A733900D01599 /* WeakStyleObserver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,7 +479,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		84587C78293979E300D01599 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+		84587C83293A7E1700D01599 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		84587C86293A7EF400D01599 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
 			requirement = {
@@ -489,49 +495,41 @@
 				kind = branch;
 			};
 		};
-		848CBDC129033604003362B5 /* XCRemoteSwiftPackageReference "CalendarKit" */ = {
+		84587C89293A7F6000D01599 /* XCRemoteSwiftPackageReference "CalendarKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/richardtop/CalendarKit.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.6;
-			};
-		};
-		84B9982628FC857300160DD8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.0.0;
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		84587C79293979E300D01599 /* FSCalendar */ = {
+		84587C84293A7E1700D01599 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 84587C78293979E300D01599 /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			package = 84587C83293A7E1700D01599 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		84587C87293A7EF400D01599 /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84587C86293A7EF400D01599 /* XCRemoteSwiftPackageReference "FSCalendar" */;
 			productName = FSCalendar;
 		};
-		848CBDC229033605003362B5 /* CalendarKit */ = {
+		84587C8A293A7F6000D01599 /* CalendarKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 848CBDC129033604003362B5 /* XCRemoteSwiftPackageReference "CalendarKit" */;
+			package = 84587C89293A7F6000D01599 /* XCRemoteSwiftPackageReference "CalendarKit" */;
 			productName = CalendarKit;
-		};
-		84B9982728FC857300160DD8 /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 84B9982628FC857300160DD8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		84FAE1F928F9E6CA00BD4F64 /* DailyPantry_cs329E.xcdatamodeld */ = {
+		84587C95293A852200D01599 /* DailyPantry_cs329E.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				84FAE1FA28F9E6CA00BD4F64 /* DailyPantry_cs329E.xcdatamodel */,
+				84587C96293A852200D01599 /* DailyPantry_cs329E.xcdatamodel */,
 			);
-			currentVersion = 84FAE1FA28F9E6CA00BD4F64 /* DailyPantry_cs329E.xcdatamodel */;
+			currentVersion = 84587C96293A852200D01599 /* DailyPantry_cs329E.xcdatamodel */;
 			path = DailyPantry_cs329E.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

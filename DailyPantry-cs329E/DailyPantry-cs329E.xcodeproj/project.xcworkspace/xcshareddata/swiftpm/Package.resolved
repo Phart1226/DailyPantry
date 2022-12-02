@@ -23,18 +23,18 @@
         "package": "CalendarKit",
         "repositoryURL": "https://github.com/richardtop/CalendarKit.git",
         "state": {
-          "branch": null,
-          "revision": "6c4536dd14c52e435c80810a66e36c9aa09307b3",
-          "version": "1.1.6"
+          "branch": "master",
+          "revision": "15a47df482a0b9d107cb606d4a4ad7b8cc51e54b",
+          "version": null
         }
       },
       {
         "package": "Firebase",
         "repositoryURL": "https://github.com/firebase/firebase-ios-sdk",
         "state": {
-          "branch": null,
-          "revision": "c24031ad9410c746c49deddc739fdf311a386fc7",
-          "version": "10.2.0"
+          "branch": "master",
+          "revision": "188083d46f5af550820fbdbb09b55f1732954aad",
+          "version": null
         }
       },
       {

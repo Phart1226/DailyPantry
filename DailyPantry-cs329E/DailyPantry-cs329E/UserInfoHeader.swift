@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import CoreData
 
 class UserInfoHeader: UIView {
+
     
     // MARK: - Properties
     
@@ -17,13 +19,12 @@ class UserInfoHeader: UIView {
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.image = UIImage(named: "ironman")
+        
         return iv
     }()
     
     let usernameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Tony Stark"
         label.font = UIFont.systemFont(ofSize: 16)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -31,7 +32,7 @@ class UserInfoHeader: UIView {
     
     let emailLabel: UILabel = {
         let label = UILabel()
-        label.text = "tony.stark@gmail.com"
+        label.text = currentUser
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = .lightGray
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -76,6 +77,29 @@ class UserInfoHeader: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setUser() -> NSManagedObject {
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserProfile")
+        var fetchedResults:[NSManagedObject]? = nil
+
+        do {
+            try fetchedResults = context.fetch(request) as? [NSManagedObject]
+        } catch {
+            // if an error occurs
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+        
+        // find user in core data by email
+        for user in fetchedResults! {
+            if (user.value(forKey: "email") as! String) == currentUser.lowercased() {
+                return user
+            }
+        }
+        return NSManagedObject()
     }
     
 }

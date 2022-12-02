@@ -7,10 +7,6 @@
 import UIKit
 import CoreData
 
-let appDelegate = UIApplication.shared.delegate as! AppDelegate
-let context = appDelegate.persistentContainer.viewContext
-
-
 class AddRecipeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     var addedIngredients: [NSManagedObject] = []
@@ -46,8 +42,8 @@ class AddRecipeViewController: UIViewController, UITableViewDelegate, UITableVie
         if tableView == addTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: IngredientTableViewCell.identifier, for: indexPath) as! IngredientTableViewCell
             
-            cell.textLabel?.text = filteredIngredients[indexPath.row].value(forKey: "name") as! String
-            cell.unitLabel?.text = filteredIngredients[indexPath.row].value(forKey: "unit") as! String
+            cell.textLabel?.text = filteredIngredients[indexPath.row].value(forKey: "name") as? String
+            cell.unitLabel?.text = filteredIngredients[indexPath.row].value(forKey: "unit") as? String
             cell.configure(with: filteredIngredients[indexPath.row])
             cell.delegate = self
         

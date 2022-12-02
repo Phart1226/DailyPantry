@@ -50,7 +50,7 @@ class LoginViewController: UIViewController {
                 self.errorLabel.text = ""
                 currentUser = self.emailText.text!
                 self.performSegue(withIdentifier: "login", sender: Any?.self)
-                
+
             }
         }
     }
