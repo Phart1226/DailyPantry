@@ -18,7 +18,6 @@ extension StoredIngredient {
 
     @NSManaged public var name: String?
     @NSManaged public var catagory: String?
-    @NSManaged public var unit: String?
     @NSManaged public var amountAvailable: Int16
     @NSManaged public var recipe: StoredRecipe?
 

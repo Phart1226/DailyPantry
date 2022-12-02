@@ -69,7 +69,7 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         if segue.identifier == "recipeSegueIndentifier", let destination = segue.destination as? RecipeViewController {
             destination.delegate = self
-            destination.recipe = retrieveRecipe()[recipeListTableView.indexPathForSelectedRow!.row]
+            destination.recipe = retrieveRecipe()[recipeListTableView.indexPathForSelectedRow!.row] as? StoredRecipe
         }
     }
     

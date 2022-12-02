@@ -75,7 +75,5 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         cell.textLabel?.text = recipes[dateSelected]
         return cell
     }
-    
-    
 
 }

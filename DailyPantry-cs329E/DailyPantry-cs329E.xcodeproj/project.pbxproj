@@ -38,6 +38,10 @@
 		BB0BB0AC292D97C600DF3725 /* StoredRecipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BB0A8292D97C600DF3725 /* StoredRecipe+CoreDataProperties.swift */; };
 		BB0BB0AD292D97C600DF3725 /* StoredQty+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BB0A9292D97C600DF3725 /* StoredQty+CoreDataClass.swift */; };
 		BB0BB0AE292D97C600DF3725 /* StoredQty+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BB0AA292D97C600DF3725 /* StoredQty+CoreDataProperties.swift */; };
+		BB55CBB3293AA70600798CDB /* RecipeDate+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB55CBB1293AA70600798CDB /* RecipeDate+CoreDataClass.swift */; };
+		BB55CBB4293AA70600798CDB /* RecipeDate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB55CBB2293AA70600798CDB /* RecipeDate+CoreDataProperties.swift */; };
+		BB5844E6291472CB00FA3677 /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5844E5291472CB00FA3677 /* IngredientTableViewCell.swift */; };
+		BBB002D729108291004B23BD /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB002D629108291004B23BD /* Recipe.swift */; };
 		BBB002D92910904F004B23BD /* RecipeCatagoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB002D82910904F004B23BD /* RecipeCatagoriesViewController.swift */; };
 		BBB002DB291092D2004B23BD /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB002DA291092D2004B23BD /* RecipeViewController.swift */; };
 		BBB002DD291092F6004B23BD /* RecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB002DC291092F6004B23BD /* RecipeListViewController.swift */; };
@@ -78,6 +82,10 @@
 		BB0BB0A8292D97C600DF3725 /* StoredRecipe+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoredRecipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BB0BB0A9292D97C600DF3725 /* StoredQty+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoredQty+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BB0BB0AA292D97C600DF3725 /* StoredQty+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoredQty+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BB55CBB1293AA70600798CDB /* RecipeDate+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecipeDate+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BB55CBB2293AA70600798CDB /* RecipeDate+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecipeDate+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BB5844E5291472CB00FA3677 /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
+		BBB002D629108291004B23BD /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		BBB002D82910904F004B23BD /* RecipeCatagoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCatagoriesViewController.swift; sourceTree = "<group>"; };
 		BBB002DA291092D2004B23BD /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		BBB002DC291092F6004B23BD /* RecipeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +163,8 @@
 		BB0BB0A2292D686800DF3725 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BB55CBB1293AA70600798CDB /* RecipeDate+CoreDataClass.swift */,
+				BB55CBB2293AA70600798CDB /* RecipeDate+CoreDataProperties.swift */,
 				BB0BB0A7292D97C600DF3725 /* StoredRecipe+CoreDataClass.swift */,
 				BB0BB0A8292D97C600DF3725 /* StoredRecipe+CoreDataProperties.swift */,
 				BB0BB0A9292D97C600DF3725 /* StoredQty+CoreDataClass.swift */,
@@ -250,12 +260,14 @@
 				84188D992903394400F0BECD /* CalendarViewController.swift in Sources */,
 				84587C7C293A72BA00D01599 /* UIStyleObserver.swift in Sources */,
 				BBB002D92910904F004B23BD /* RecipeCatagoriesViewController.swift in Sources */,
+				BB55CBB3293AA70600798CDB /* RecipeDate+CoreDataClass.swift in Sources */,
 				BBB002DF2910930E004B23BD /* AddRecipeViewController.swift in Sources */,
 				BBB002DD291092F6004B23BD /* RecipeListViewController.swift in Sources */,
 				8480380B291B4AD700FC9152 /* UserInfoHeader.swift in Sources */,
 				BB0BB0AC292D97C600DF3725 /* StoredRecipe+CoreDataProperties.swift in Sources */,
 				BB0BB0AB292D97C600DF3725 /* StoredRecipe+CoreDataClass.swift in Sources */,
 				84587C94293A837300D01599 /* StoredIngredient+CoreDataClass.swift in Sources */,
+				BB55CBB4293AA70600798CDB /* RecipeDate+CoreDataProperties.swift in Sources */,
 				84C17B1729219EF600F33A9E /* PantrySection.swift in Sources */,
 				84803808291B4AC500FC9152 /* SettingsCell.swift in Sources */,
 				84C17B1429219C8F00F33A9E /* PantryViewController.swift in Sources */,

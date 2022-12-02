@@ -461,7 +461,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="G4u-Nk-NXu">
-                                <rect key="frame" x="20" y="147" width="388" height="316"/>
+                                <rect key="frame" x="20" y="182" width="388" height="558"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ingredientCell" textLabel="fau-lJ-uXh" detailTextLabel="fz0-zy-4yW" style="IBUITableViewCellStyleValue1" id="lvZ-1V-E5U">
@@ -494,21 +494,38 @@
                                 <rect key="frame" x="168.33333333333334" y="797" width="93.666666666666657" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add to day"/>
+                                <connections>
+                                    <action selector="addToDayButtonPressed:" destination="c8r-DL-ilk" eventType="touchUpInside" id="yHY-WV-ELz"/>
+                                </connections>
                             </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="mdU-D9-qAp">
+                                <rect key="frame" x="143" y="748" width="142" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="upv-FE-YPs"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="datePickerValueChanged:" destination="c8r-DL-ilk" eventType="valueChanged" id="6Ts-u7-dIA"/>
+                                </connections>
+                            </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AHW-s3-K4W"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="G4u-Nk-NXu" firstAttribute="top" secondItem="AHW-s3-K4W" secondAttribute="top" constant="91" id="0sI-3P-NHw"/>
+                            <constraint firstItem="mdU-D9-qAp" firstAttribute="centerX" secondItem="Irf-00-6yG" secondAttribute="centerX" id="3cL-1P-6kv"/>
+                            <constraint firstItem="mdU-D9-qAp" firstAttribute="centerX" secondItem="Irf-00-6yG" secondAttribute="centerX" id="8qt-6W-fgv"/>
+                            <constraint firstItem="0IL-F5-h6a" firstAttribute="leading" secondItem="AHW-s3-K4W" secondAttribute="leading" constant="156" id="E9F-XA-3rg"/>
                             <constraint firstItem="AHW-s3-K4W" firstAttribute="trailing" secondItem="G4u-Nk-NXu" secondAttribute="trailing" constant="20" id="H4Y-Wn-cbB"/>
                             <constraint firstItem="AHW-s3-K4W" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wfk-cd-kxP" secondAttribute="trailing" symbolic="YES" id="JvT-kG-GJV"/>
+                            <constraint firstItem="AHW-s3-K4W" firstAttribute="trailing" secondItem="mdU-D9-qAp" secondAttribute="trailing" constant="143" id="NVU-lt-hql"/>
                             <constraint firstItem="AHW-s3-K4W" firstAttribute="bottom" secondItem="0IL-F5-h6a" secondAttribute="bottom" constant="44" id="Qoj-Pa-9fC"/>
                             <constraint firstItem="G4u-Nk-NXu" firstAttribute="top" secondItem="wfk-cd-kxP" secondAttribute="bottom" constant="8" symbolic="YES" id="S0i-WU-lkM"/>
                             <constraint firstItem="wfk-cd-kxP" firstAttribute="top" secondItem="AHW-s3-K4W" secondAttribute="top" constant="62" id="ZpI-Vj-G0K"/>
-                            <constraint firstItem="AHW-s3-K4W" firstAttribute="bottom" secondItem="G4u-Nk-NXu" secondAttribute="bottom" constant="409" id="gnM-bE-gaR"/>
+                            <constraint firstItem="AHW-s3-K4W" firstAttribute="bottom" secondItem="G4u-Nk-NXu" secondAttribute="bottom" constant="152" id="gnM-bE-gaR"/>
+                            <constraint firstItem="AHW-s3-K4W" firstAttribute="bottom" secondItem="mdU-D9-qAp" secondAttribute="bottom" constant="83" id="gpN-G7-mqY"/>
                             <constraint firstItem="G4u-Nk-NXu" firstAttribute="centerX" secondItem="Irf-00-6yG" secondAttribute="centerX" id="grh-JI-dEy"/>
                             <constraint firstItem="UpV-Qf-iqf" firstAttribute="centerX" secondItem="Irf-00-6yG" secondAttribute="centerX" id="imB-sB-PvK"/>
-                            <constraint firstItem="AHW-s3-K4W" firstAttribute="trailing" secondItem="0IL-F5-h6a" secondAttribute="trailing" constant="166" id="oCW-Yo-HAL"/>
+                            <constraint firstItem="AHW-s3-K4W" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0IL-F5-h6a" secondAttribute="trailing" id="oCW-Yo-HAL"/>
                             <constraint firstItem="G4u-Nk-NXu" firstAttribute="leading" secondItem="AHW-s3-K4W" secondAttribute="leading" constant="20" id="rrH-hC-TlU"/>
                             <constraint firstItem="UpV-Qf-iqf" firstAttribute="top" secondItem="AHW-s3-K4W" secondAttribute="top" id="u1A-8R-8mJ"/>
                             <constraint firstItem="wfk-cd-kxP" firstAttribute="leading" secondItem="AHW-s3-K4W" secondAttribute="leading" constant="39" id="z2S-Ce-i9f"/>
@@ -516,6 +533,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="aLf-Vp-NcK"/>
                     <connections>
+                        <outlet property="datePicker" destination="mdU-D9-qAp" id="dOd-LJ-Tgn"/>
                         <outlet property="ingredientsTableView" destination="G4u-Nk-NXu" id="5v2-b0-Wqo"/>
                         <outlet property="recipeLabel" destination="UpV-Qf-iqf" id="w4D-OJ-lgX"/>
                     </connections>
@@ -552,15 +570,15 @@
                                                     </connections>
                                                 </button>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jUm-JV-3XH">
-                                                    <rect key="frame" x="208.66666666666666" y="10" width="40" height="35"/>
+                                                    <rect key="frame" x="208" y="10" width="40" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="FBA-vW-B6i"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTG-eD-9LB">
-                                                    <rect key="frame" x="256.66666666666669" y="16" width="32" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTG-eD-9LB">
+                                                    <rect key="frame" x="256" y="16" width="28" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
