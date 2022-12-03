@@ -27,12 +27,6 @@ class PantryViewController: UIViewController {
         configureUI()
         getPantryItems()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        getPantryItems()
-        tableView.reloadData()
-    }
 
     // MARK: - Helper Functions
     
@@ -84,7 +78,7 @@ class PantryViewController: UIViewController {
     }
     
     func getPantryItems(){
-        let pantryItems = retrievePantry()
+        var pantryItems = retrievePantry()
         if pantryItems.count != 0 {
             if (currentPantryItems["Meat"]?.names.count)! == 0{
                 for item in pantryItems{
@@ -112,6 +106,12 @@ class PantryViewController: UIViewController {
                     // commit the changes
                     saveContext()
                 }
+            }
+            pantryItems = retrievePantry()
+            for item in pantryItems{
+                currentPantryItems[(item.value(forKey: "catagory") as! String)]?.names.append((item.value(forKey: "name") as! String))
+                currentPantryItems[(item.value(forKey: "catagory") as! String)]?.qtys.append((item.value(forKey: "amountAvailable") as! Int))
+                
             }
         }
     }
