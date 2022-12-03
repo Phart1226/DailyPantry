@@ -86,6 +86,11 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 recipeDate.recipe = recipeDate.recipe?.adding(recipe!) as NSSet?
             }
             
+            let date = NSEntityDescription.insertNewObject(forEntityName: "RecipeDate", into: context)
+            
+            date.setValue(formattedDate, forKey: "date")
+            date.setValue((recipe.value(forKey: "name") as! String), forKey: "recipeName")
+            
             saveContext()
         }
     }

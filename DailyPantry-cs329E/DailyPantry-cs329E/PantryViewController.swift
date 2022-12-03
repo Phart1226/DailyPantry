@@ -132,6 +132,31 @@ class PantryViewController: UIViewController {
         return (fetchedResults)!
     }
     
+    func clearCoreData() {
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "StoredIngredient")
+        var fetchedResults:[NSManagedObject]
+        
+        do {
+            try fetchedResults = context.fetch(request) as! [NSManagedObject]
+            
+            if fetchedResults.count > 0 {
+                for result:AnyObject in fetchedResults {
+                    context.delete(result as! NSManagedObject)
+                    print("\(result.value(forKey: "name")!) has been deleted")
+                }
+            }
+            saveContext()
+            
+        } catch {
+            // if an error occurs
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+        
+    }
+    
     func saveContext () {
         if context.hasChanges {
             do {

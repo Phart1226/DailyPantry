@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22A400" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="20G918" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="RecipeDate" representedClassName="RecipeDate" syncable="YES">
         <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="recipeName" optional="YES" attributeType="String"/>
         <relationship name="recipe" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StoredRecipe" inverseName="date" inverseEntity="StoredRecipe"/>
     </entity>
     <entity name="StoredIngredient" representedClassName="StoredIngredient" syncable="YES">
@@ -30,6 +31,7 @@
         <attribute name="profilePic" optional="YES" attributeType="Binary"/>
     </entity>
     <elements>
+        <element name="RecipeDate" positionX="160" positionY="192" width="128" height="74"/>
         <element name="StoredIngredient" positionX="-45" positionY="0" width="128" height="104"/>
         <element name="StoredQty" positionX="27" positionY="117" width="128" height="74"/>
         <element name="StoredRecipe" positionX="-9" positionY="63" width="128" height="104"/>
