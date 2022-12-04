@@ -45,11 +45,12 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let ingredient = ingredients.allObjects[indexPath.row] as! NSManagedObject
         let ingredientName = (ingredient.value(forKey: "name") as! String)
         let qtyIndex = qtyArry.firstIndex(where: {($0 as! StoredQty).ingredientName! == ingredientName})
-        let qty = (qtyArry[qtyIndex!] as! StoredQty).qty
+        let qty = String((qtyArry[qtyIndex!] as! StoredQty).qty)
+        let available = ingredient.value(forKey: "amountAvailable")!
         
         
         cell.textLabel?.text = ingredientName
-        cell.detailTextLabel?.text = String(qty)
+        cell.detailTextLabel?.text = "\(qty): Available \(String(describing: available))"
     
 
         return cell
@@ -63,7 +64,31 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     @IBAction func addToDayButtonPressed(_ sender: Any) {
+        let ingredients = recipe.value(forKey: "ingredient") as! NSSet
+        let qtyArry = (recipe.value(forKey: "qty") as! NSSet).allObjects
+        for ingredient in ingredients {
+            let ingredientName = (ingredient as! NSManagedObject).value(forKey: "name")!
+            let qtyIndex = qtyArry.firstIndex(where: {($0 as! StoredQty).ingredientName! == ingredientName as! String})
+            let qty = (qtyArry[qtyIndex!] as! StoredQty).qty
+            let available = (ingredient as! NSManagedObject).value(forKey: "amountAvailable")!
+            
+            if qty > available as! Double {
+                let controller = UIAlertController(
+                    title: "Cannot Add Recipe",
+                    message: "You dont have enough \(String(describing: ingredientName))",
+                    preferredStyle: .alert)
+                controller.addAction(UIAlertAction(
+                    title: "Ok",
+                    style: .default))
+                present(controller, animated: true)
+                
+                return
+            }
+        }
+
+        
         if date >= today {
+            
             let formatter = DateFormatter()
             formatter.dateFormat = "dd-MMM-yyyy"
             let formattedDate = formatter.string(from: date)
@@ -90,7 +115,19 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
             date.setValue(formattedDate, forKey: "date")
             date.setValue((recipe.value(forKey: "name") as! String), forKey: "recipeName")
             
+            for ingredient in ingredients {
+                let ingredientName = (ingredient as! NSManagedObject).value(forKey: "name")!
+                let qtyIndex = qtyArry.firstIndex(where: {($0 as! StoredQty).ingredientName! == ingredientName as! String})
+                let qty = (qtyArry[qtyIndex!] as! StoredQty).qty
+                let available = (ingredient as! NSManagedObject).value(forKey: "amountAvailable")! as! Double
+                
+                (ingredient as! NSManagedObject).setValue((available-qty), forKey: "amountAvailable")
+                
+            }
+            
             saveContext()
+            
+            ingredientsTableView.reloadData()
         }
     }
     

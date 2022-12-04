@@ -26,6 +26,7 @@ class PantryViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
         getPantryItems()
+
     }
 
     // MARK: - Helper Functions

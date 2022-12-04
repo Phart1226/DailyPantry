@@ -10,7 +10,7 @@ import CoreData
 
 
 protocol IngredientTableViewCellDelegate: AnyObject {
-    func addButtonPressed(with ingredient: NSManagedObject, with qty:Int)
+    func addButtonPressed(with ingredient: NSManagedObject, with qty:Float64)
 }
 
 class IngredientTableViewCell: UITableViewCell {
@@ -29,8 +29,8 @@ class IngredientTableViewCell: UITableViewCell {
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
-        if (unitField.text != nil && unitField.text!.isInt) {
-            delegate?.addButtonPressed(with: ingredient, with: Int(unitField.text!)!)
+        if (unitField.text != nil && (Float(unitField.text!) != nil)) {
+            delegate?.addButtonPressed(with: ingredient, with: Float64(unitField.text!)!)
         }
         
     }

@@ -11,7 +11,7 @@ class AddRecipeViewController: UIViewController, UITableViewDelegate, UITableVie
     
     var addedIngredients: [NSManagedObject] = []
     var filteredIngredients: [NSManagedObject]!
-    var addedQty: [Int] = []
+    var addedQty: [Float64] = []
     var catagory:String!
     var delegate:UIViewController!
 
@@ -42,7 +42,7 @@ class AddRecipeViewController: UIViewController, UITableViewDelegate, UITableVie
         if tableView == addTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: IngredientTableViewCell.identifier, for: indexPath) as! IngredientTableViewCell
             
-            cell.textLabel?.text = filteredIngredients[indexPath.row].value(forKey: "name") as! String
+            cell.textLabel?.text = (filteredIngredients[indexPath.row].value(forKey: "name") as! String)
             cell.configure(with: filteredIngredients[indexPath.row])
             cell.delegate = self
         
@@ -50,32 +50,55 @@ class AddRecipeViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "AddedIngredientCell", for: indexPath)
-            cell.textLabel?.text = addedIngredients[indexPath.row].value(forKey: "name") as! String
-            cell.detailTextLabel?.text = String(addedQty[indexPath.row])
+            cell.textLabel?.text = (addedIngredients[indexPath.row].value(forKey: "name") as! String)
+            
+            if floor(addedQty[indexPath.row]) == addedQty[indexPath.row] {
+                cell.detailTextLabel?.text = String(Int(addedQty[indexPath.row]))
+            } else {
+                cell.detailTextLabel?.text = String(addedQty[indexPath.row])
+            }
+ 
             return cell
         }
         
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
-        
-        let recipe = StoredRecipe(context: context)
-        recipe.name = recipeName.text
-        recipe.catagory = catagory
-        recipe.ingredient = NSSet(array: addedIngredients)
-
-        var qtyArray:[StoredQty] = []
-
-        for i in 0...addedIngredients.count - 1{
-            let qty = StoredQty(context: context)
-            qty.qty = Double(addedQty[i])
-            qty.ingredientName = addedIngredients[i].value(forKey: "name") as! String
-            qtyArray.append(qty)
+        if recipeName.text != nil && addedIngredients.count > 0 {
+            let recipe = StoredRecipe(context: context)
+            recipe.name = recipeName.text
+            recipe.catagory = catagory
+            recipe.ingredient = NSSet(array: addedIngredients)
+            
+            var qtyArray:[StoredQty] = []
+            
+            for i in 0...addedIngredients.count - 1{
+                let qty = StoredQty(context: context)
+                qty.qty = Float64(addedQty[i])
+                qty.ingredientName = addedIngredients[i].value(forKey: "name") as! String
+                qtyArray.append(qty)
+            }
+            
+            recipe.qty = NSSet(array: qtyArray)
+            
+            saveContext()
+        } else {
+            var missing: String
+            if recipeName.text == "" {
+                missing = "recipe name."
+            } else {
+                missing = "ingredeints"
+            }
+            
+            let controller = UIAlertController(
+                title: "Cannot Add Recipe",
+                message: "Please add \(missing)",
+                preferredStyle: .alert)
+            controller.addAction(UIAlertAction(
+                title: "Ok",
+                style: .default))
+            present(controller, animated: true)
         }
-        
-        recipe.qty = NSSet(array: qtyArray)
-        
-        saveContext()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -150,7 +173,7 @@ class AddRecipeViewController: UIViewController, UITableViewDelegate, UITableVie
 }
 
 extension AddRecipeViewController: IngredientTableViewCellDelegate {
-    func addButtonPressed(with ingredient: NSManagedObject, with qty: Int) {
+    func addButtonPressed(with ingredient: NSManagedObject, with qty: Float64) {
         if !addedIngredients.contains(ingredient) {
             addedIngredients.append(ingredient)
             addedQty.append(qty)
