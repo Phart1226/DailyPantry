@@ -86,7 +86,11 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
             NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
             abort()
         }
-        return(fetchedResults)!
+        
+        let filtered = fetchedResults!.filter {recipe in
+            return recipe.value(forKey: "catagory") as? String == catagory
+        }
+        return filtered
     }
     
     func saveContext () {

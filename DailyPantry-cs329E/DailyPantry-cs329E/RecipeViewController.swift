@@ -28,7 +28,6 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         date = datePicker.date
         today = datePicker.date
         
-        
         recipeLabel.text = (recipe.value(forKey: "name") as! String)
 
     }
