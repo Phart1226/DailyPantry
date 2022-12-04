@@ -64,7 +64,7 @@ class AddRecipeViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
-        if recipeName.text != nil && addedIngredients.count > 0 {
+        if recipeName.text != "" && addedIngredients.count > 0 {
             let recipe = StoredRecipe(context: context)
             recipe.name = recipeName.text
             recipe.catagory = catagory
