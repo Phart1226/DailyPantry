@@ -26,8 +26,6 @@ class AddToPantryViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet weak var quantityField: UITextField!
     @IBOutlet weak var stepper: UIStepper!
     
-    @IBOutlet weak var updateBtn: UIButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         UILabel.appearance().substituteFontName = fontStyle

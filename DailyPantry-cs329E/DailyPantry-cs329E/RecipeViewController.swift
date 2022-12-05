@@ -32,6 +32,10 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        ingredientsTableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let ingredients = recipe.value(forKey: "ingredient") as! NSSet
         return ingredients.count

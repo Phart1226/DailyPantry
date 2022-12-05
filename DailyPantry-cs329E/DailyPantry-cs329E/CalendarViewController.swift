@@ -154,10 +154,31 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
                 try fetchedResults = context.fetch(request) as! [NSManagedObject]
                 
                 context.delete(fetchedResults[indexPath.row] as NSManagedObject)
-    
-                saveContext()
                 
+                // updating the amount available
                 let meal = selMeals[indexPath.row]
+                
+                let recipes = retrieveRecipe()
+                var selectedMeal = StoredRecipe()
+                for recipe in recipes{
+                    if (recipe.value(forKey: "name") as! String) == meal{
+                        selectedMeal = recipe as! StoredRecipe
+                    }
+                }
+                
+                let ingredients = selectedMeal.value(forKey: "ingredient") as! NSSet
+                let qtyArry = (selectedMeal.value(forKey: "qty") as! NSSet).allObjects
+                
+                for ing in ingredients{
+                    let ingredient = ing as! NSManagedObject
+                    let ingredientName = (ingredient.value(forKey: "name") as! String)
+                    let amtAvail = ingredient.value(forKey: "amountAvailable") as! Float
+                    let qtyIndex = qtyArry.firstIndex(where: {($0 as! StoredQty).ingredientName! == ingredientName})
+                    let qty = (qtyArry[qtyIndex!] as! StoredQty).qty
+                    ingredient.setValue(amtAvail + Float(qty), forKey: "amountAvailable")
+                }
+                
+                saveContext()
                 
                 selMeals = []
                 allMeals = retrieveMeals()

@@ -338,7 +338,6 @@
                         <outlet property="itemPicker" destination="nSj-Cg-52i" id="ZsY-jf-Dzh"/>
                         <outlet property="quantityField" destination="dov-Ei-Ejy" id="ovV-91-IyF"/>
                         <outlet property="stepper" destination="GDp-06-AFf" id="3BI-Em-r0a"/>
-                        <outlet property="updateBtn" destination="csU-5m-H8q" id="RrX-G8-IIZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cgj-vR-8rK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -536,7 +535,13 @@
                             <constraint firstItem="wfk-cd-kxP" firstAttribute="leading" secondItem="AHW-s3-K4W" secondAttribute="leading" constant="39" id="z2S-Ce-i9f"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="aLf-Vp-NcK"/>
+                    <navigationItem key="navigationItem" id="aLf-Vp-NcK">
+                        <barButtonItem key="rightBarButtonItem" title="Add to Pantry" id="9pP-fn-6se">
+                            <connections>
+                                <segue destination="rSH-3A-kbX" kind="show" id="ti6-rA-b1k"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="mdU-D9-qAp" id="dOd-LJ-Tgn"/>
                         <outlet property="ingredientsTableView" destination="G4u-Nk-NXu" id="5v2-b0-Wqo"/>
@@ -717,6 +722,9 @@
             <point key="canvasLocation" x="4621.9626168224295" y="-362.20302375809939"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ti6-rA-b1k"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="plus" catalog="system" width="128" height="113"/>
