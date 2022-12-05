@@ -24,8 +24,13 @@ class PantryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        UILabel.appearance().substituteFontName = fontStyle
         configureUI()
         getPantryItems()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        getPantryItems()
+        self.tableView.reloadData()
     }
 
     // MARK: - Helper Functions
@@ -173,7 +178,7 @@ extension PantryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView (_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let button = UIButton(type: .system)
-        button.backgroundColor = UIColor(red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
+        button.backgroundColor = UIColor.systemOrange
         button.setTitle(PantrySection(rawValue: section)?.description, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.setTitleColor(.white, for: .normal)

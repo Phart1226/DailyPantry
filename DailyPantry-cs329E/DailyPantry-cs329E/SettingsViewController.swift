@@ -21,8 +21,13 @@ class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        UILabel.appearance().substituteFontName = fontStyle
         configureUI()
         startObserving(&UIStyleManager.shared)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        UILabel.appearance().substituteFontName = fontStyle
     }
 
     // MARK: - Helper Functions
@@ -58,7 +63,7 @@ class SettingsViewController: UIViewController {
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView (_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView()
-        view.backgroundColor = UIColor(red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
+        view.backgroundColor = UIColor.systemOrange
         
         let title = UILabel()
         title.font = UIFont.boldSystemFont(ofSize: 16)

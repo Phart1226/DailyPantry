@@ -22,7 +22,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        UILabel.appearance().substituteFontName = fontStyle
         passwordText.isSecureTextEntry = true
         
         startObserving(&UIStyleManager.shared)

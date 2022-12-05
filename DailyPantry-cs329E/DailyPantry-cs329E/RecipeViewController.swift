@@ -21,7 +21,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        UILabel.appearance().substituteFontName = fontStyle
         // Do any additional setup after loading the view.
         ingredientsTableView.delegate = self
         ingredientsTableView.dataSource = self
