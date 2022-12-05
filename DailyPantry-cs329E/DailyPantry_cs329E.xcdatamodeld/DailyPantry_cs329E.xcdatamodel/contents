@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22A400" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="RecipeDate" representedClassName="RecipeDate" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="recipeName" optional="YES" attributeType="String"/>
+        <relationship name="recipe" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StoredRecipe" inverseName="date" inverseEntity="StoredRecipe"/>
+    </entity>
+    <entity name="StoredIngredient" representedClassName="StoredIngredient" syncable="YES">
+        <attribute name="amountAvailable" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="catagory" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="recipe" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StoredRecipe" inverseName="ingredient" inverseEntity="StoredRecipe"/>
+    </entity>
+    <entity name="StoredQty" representedClassName="StoredQty" syncable="YES">
+        <attribute name="ingredientName" optional="YES" attributeType="String"/>
+        <attribute name="qty" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="recipe" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StoredRecipe" inverseName="qty" inverseEntity="StoredRecipe"/>
+    </entity>
+    <entity name="StoredRecipe" representedClassName="StoredRecipe" syncable="YES">
+        <attribute name="catagory" optional="YES" attributeType="String"/>
+        <attribute name="dates" optional="YES" attributeType="Transformable"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="date" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RecipeDate" inverseName="recipe" inverseEntity="RecipeDate"/>
+        <relationship name="ingredient" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StoredIngredient" inverseName="recipe" inverseEntity="StoredIngredient"/>
+        <relationship name="qty" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StoredQty" inverseName="recipe" inverseEntity="StoredQty"/>
+    </entity>
+    <entity name="UserProfile" representedClassName="UserProfile" syncable="YES" codeGenerationType="class">
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="password" optional="YES" attributeType="String"/>
+        <attribute name="profilePic" optional="YES" attributeType="Binary"/>
+    </entity>
+</model>
