@@ -9,6 +9,17 @@ import UIKit
 import FSCalendar
 import CoreData
 
+extension UILabel {
+
+    @objc var substituteFontName : String {
+        get { return self.font.fontName }
+        set { self.font = UIFont(name: newValue, size: self.font.pointSize) }
+    }
+
+}
+
+var fontStyle = "Verdana-Bold"
+
 class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource, UITableViewDelegate, UITableViewDataSource{
     
     var calendar:FSCalendar!
@@ -20,12 +31,13 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        UILabel.appearance().substituteFontName = fontStyle
         // setting up calendar
         calendar = FSCalendar(frame: CGRect(x: 0.0, y: 100.0, width: self.view.frame.size.width, height: 500.0))
         calendar.scrollDirection = .vertical
         calendar.scope = .week
         self.view.addSubview(calendar)
+        self.view.sendSubviewToBack(calendar)
         
         calendar.delegate = self
         
@@ -46,10 +58,14 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         formatter.dateFormat = "dd-MMM-YYYY"
         dateSelected = formatter.string(from: Date())
         
-        
-//        clearCoreData()
-//        loadCalendar()
-        
+        allMeals = retrieveMeals()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        UILabel.appearance().substituteFontName = fontStyle
+        allMeals = retrieveMeals()
+        selMeals = []
+        tableView.reloadData()
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
@@ -74,6 +90,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        selMeals = []
         for meal in allMeals{
             if (meal.value(forKey: "date") as! String) == dateSelected{
                 let recipeName = meal.value(forKey: "recipeName") as? String ?? ""
@@ -95,12 +112,17 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let recipes = retrieveRecipe()
-        let recipe = recipes[indexPath.row] as! StoredRecipe
+        var selectedMeal = StoredRecipe()
+        for recipe in recipes{
+            if (recipe.value(forKey: "name") as! String) == selMeals[indexPath.row]{
+                selectedMeal = recipe as! StoredRecipe
+            }
+        }
         
-        let ingredients = recipe.value(forKey: "ingredient") as! NSSet
-        let qtyArry = (recipe.value(forKey: "qty") as! NSSet).allObjects
+        let ingredients = selectedMeal.value(forKey: "ingredient") as! NSSet
+        let qtyArry = (selectedMeal.value(forKey: "qty") as! NSSet).allObjects
         
-        let alert = UIAlertController(title: "Meal: \(recipe.value(forKey: "name") as! String)",
+        let alert = UIAlertController(title: "Meal: \(selectedMeal.value(forKey: "name") as! String)",
                                       message: "Ingredients:",
                                       preferredStyle: .alert)
         
@@ -108,23 +130,47 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         
         alert.addAction(backAction)
         
-        present(alert, animated: true, completion: {
-            for ing in ingredients{
-                let ingredient = ing as! NSManagedObject
-                let ingredientName = (ingredient.value(forKey: "name") as! String)
-                let qtyIndex = qtyArry.firstIndex(where: {($0 as! StoredQty).ingredientName! == ingredientName})
-                let qty = (qtyArry[qtyIndex!] as! StoredQty).qty
-                //  Add your label
-                  let margin:CGFloat = 8.0
-                  let rect = CGRect(x: margin, y: 72.0, width: alert.view.frame.width - margin * 2.0 , height: 20)
-                  let label = UILabel(frame: rect)
-                  label.text = "\(ingredientName)     qty: \(qty)"
-                  label.textAlignment = .center
-                  label.adjustsFontSizeToFitWidth = true
-                  label.minimumScaleFactor = 0.5
-                  alert.view.addSubview(label)
+        for ing in ingredients{
+            let ingredient = ing as! NSManagedObject
+            let ingredientName = (ingredient.value(forKey: "name") as! String)
+            let qtyIndex = qtyArry.firstIndex(where: {($0 as! StoredQty).ingredientName! == ingredientName})
+            let qty = (qtyArry[qtyIndex!] as! StoredQty).qty
+            alert.addTextField { (textField) -> Void in
+                            textField.text = "\(ingredientName)     qty: \(qty)"
+                            textField.isUserInteractionEnabled = false
+                        }
+        }
+        
+        present(alert, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+     
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "RecipeDate")
+            var fetchedResults:[NSManagedObject]
+            
+            do {
+                try fetchedResults = context.fetch(request) as! [NSManagedObject]
+                
+                context.delete(fetchedResults[indexPath.row] as NSManagedObject)
+    
+                saveContext()
+                
+                let meal = selMeals[indexPath.row]
+                
+                selMeals = []
+                allMeals = retrieveMeals()
+                
+                self.tableView.reloadData()
+                
+            } catch {
+                // if an error occurs
+                let nserror = error as NSError
+                NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+                abort()
             }
-        })
+        }
     }
     
     func retrieveMeals() -> [NSManagedObject]{

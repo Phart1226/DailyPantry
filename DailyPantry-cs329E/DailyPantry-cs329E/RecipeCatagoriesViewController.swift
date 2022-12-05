@@ -15,6 +15,7 @@ class RecipeCatagoriesViewController: UIViewController, UITableViewDelegate, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UILabel.appearance().substituteFontName = fontStyle
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.

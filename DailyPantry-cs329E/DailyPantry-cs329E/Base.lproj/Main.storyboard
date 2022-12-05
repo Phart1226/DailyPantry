@@ -147,13 +147,13 @@
         <!--Daily Pantry-->
         <scene sceneID="oZM-ux-yXy">
             <objects>
-                <viewController id="tyV-MC-yCC" customClass="CalendarViewController" customModule="DailyPantry_cs329E" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="tyV-MC-yCC" customClass="CalendarViewController" customModule="DailyPantry_cs329E" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MD9-JL-zwE">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d0o-yG-PmS">
-                                <rect key="frame" x="20" y="231" width="388" height="641"/>
+                                <rect key="frame" x="20" y="271" width="388" height="601"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="eventCell" textLabel="kkA-q2-iDc" style="IBUITableViewCellStyleDefault" id="Xfd-3w-ZAc">
@@ -180,10 +180,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="hPb-OY-M3r" firstAttribute="trailing" secondItem="d0o-yG-PmS" secondAttribute="trailing" constant="20" id="Dqt-WI-rWU"/>
+                            <constraint firstItem="d0o-yG-PmS" firstAttribute="top" secondItem="hPb-OY-M3r" secondAttribute="top" constant="215" id="GNg-Cv-CGz"/>
                             <constraint firstItem="d0o-yG-PmS" firstAttribute="leading" secondItem="hPb-OY-M3r" secondAttribute="leading" constant="20" id="Mur-fw-j7k"/>
                             <constraint firstItem="d0o-yG-PmS" firstAttribute="centerX" secondItem="MD9-JL-zwE" secondAttribute="centerX" id="iYf-p0-UYX"/>
                             <constraint firstItem="d0o-yG-PmS" firstAttribute="bottom" secondItem="hPb-OY-M3r" secondAttribute="bottom" id="kpI-uT-mdp"/>
-                            <constraint firstItem="d0o-yG-PmS" firstAttribute="top" secondItem="hPb-OY-M3r" secondAttribute="top" constant="175" id="ppS-vJ-GbO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Daily Pantry" id="y9U-Zd-4fM">
@@ -270,7 +270,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csU-5m-H8q">
-                                <rect key="frame" x="172.33333333333334" y="769" width="83.333333333333343" height="35.666666666666629"/>
+                                <rect key="frame" x="154" y="769" width="120" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="UZp-Px-p04"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Update" cornerStyle="capsule">
                                     <backgroundConfiguration key="background"/>
                                     <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
@@ -292,7 +296,7 @@
                             </textField>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="GDp-06-AFf">
                                 <rect key="frame" x="274" y="655" width="94" height="32"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="94" id="UHh-rf-2gB"/>
                                 </constraints>
@@ -322,7 +326,7 @@
                             <constraint firstItem="GDp-06-AFf" firstAttribute="leading" secondItem="dov-Ei-Ejy" secondAttribute="trailing" constant="61" id="WgJ-YB-uaY"/>
                             <constraint firstItem="GDp-06-AFf" firstAttribute="top" secondItem="VGg-oR-JXX" secondAttribute="bottom" constant="535" id="fbE-rd-dqk"/>
                             <constraint firstItem="VGg-oR-JXX" firstAttribute="top" secondItem="6SH-NS-nqk" secondAttribute="top" constant="40" id="h8f-my-FWm"/>
-                            <constraint firstItem="csU-5m-H8q" firstAttribute="centerX" secondItem="ckp-Da-QBe" secondAttribute="centerX" id="qQj-zi-drZ"/>
+                            <constraint firstItem="csU-5m-H8q" firstAttribute="centerX" secondItem="ckp-Da-QBe" secondAttribute="centerX" id="lu7-qp-9p4"/>
                             <constraint firstItem="dov-Ei-Ejy" firstAttribute="leading" secondItem="6SH-NS-nqk" secondAttribute="leading" constant="163" id="rE8-K0-dnk"/>
                             <constraint firstItem="lTc-Hr-zgq" firstAttribute="top" secondItem="VGg-oR-JXX" secondAttribute="bottom" constant="38" id="uVs-vZ-f36"/>
                             <constraint firstItem="eS9-mC-ulw" firstAttribute="centerX" secondItem="ckp-Da-QBe" secondAttribute="centerX" id="wzv-JD-Tw2"/>
@@ -334,11 +338,12 @@
                         <outlet property="itemPicker" destination="nSj-Cg-52i" id="ZsY-jf-Dzh"/>
                         <outlet property="quantityField" destination="dov-Ei-Ejy" id="ovV-91-IyF"/>
                         <outlet property="stepper" destination="GDp-06-AFf" id="3BI-Em-r0a"/>
+                        <outlet property="updateBtn" destination="csU-5m-H8q" id="RrX-G8-IIZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cgj-vR-8rK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3624" y="835"/>
+            <point key="canvasLocation" x="3623.8317757009345" y="834.55723542116641"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="gfP-3D-7nb">
@@ -359,7 +364,7 @@
         <!--Recipe Book-->
         <scene sceneID="tT3-4b-Zs2">
             <objects>
-                <viewController id="4MU-kc-acj" customClass="RecipeCatagoriesViewController" customModule="DailyPantry_cs329E" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController autoresizesArchivedViewToFullSize="NO" modalPresentationStyle="fullScreen" interfaceStyle="light" id="4MU-kc-acj" customClass="RecipeCatagoriesViewController" customModule="DailyPantry_cs329E" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ovB-Ml-Va5">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -563,6 +568,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSZ-mG-ctd">
                                                     <rect key="frame" x="333.66666666666669" y="11" width="50" height="33"/>
+                                                    <color key="tintColor" systemColor="systemOrangeColor"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="filled" title="Add"/>
                                                     <connections>
@@ -648,8 +654,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31.333333333333371" id="D76-0t-oYI"/>
                                 </constraints>
+                                <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Add"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add"/>
                                 <connections>
                                     <action selector="addButtonPressed:" destination="ZA9-YP-cc7" eventType="touchUpInside" id="d68-Gd-IgJ"/>
                                 </connections>
@@ -716,8 +723,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

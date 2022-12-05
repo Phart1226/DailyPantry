@@ -23,7 +23,7 @@ class SettingsCell: UITableViewCell {
     lazy var switchControl: UISwitch = {
         let switchControl = UISwitch()
         switchControl.isOn = true
-        switchControl.onTintColor = UIColor(red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
+        switchControl.onTintColor = .systemOrange
         switchControl.translatesAutoresizingMaskIntoConstraints = false
         switchControl.addTarget(self, action: #selector(handleSwitchAction), for: .valueChanged)
         return switchControl
@@ -58,6 +58,7 @@ class SettingsCell: UITableViewCell {
             }
             if self.switchLabel == "Stylistic Font" {
                 self.textLabel?.font  = UIFont(name: "Papyrus", size: 18)
+                fontStyle = "Papyrus"
             }
             print("turned on")
         }else{
@@ -71,6 +72,7 @@ class SettingsCell: UITableViewCell {
             }
             if self.switchLabel == "Stylistic Font" {
                 self.textLabel?.font  = .preferredFont(forTextStyle: .body)
+                fontStyle = "Verdana-Bold"
             }
             print("turned off")
         }
