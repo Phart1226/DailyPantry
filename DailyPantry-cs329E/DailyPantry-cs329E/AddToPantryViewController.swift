@@ -36,6 +36,7 @@ class AddToPantryViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
         groceryItems = retrieveItems()
         getItems()
+        startObserving(&UIStyleManager.shared)
         
     }
     

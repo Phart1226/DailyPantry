@@ -59,9 +59,11 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         dateSelected = formatter.string(from: Date())
         
         allMeals = retrieveMeals()
+        startObserving(&UIStyleManager.shared)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        startObserving(&UIStyleManager.shared)
         UILabel.appearance().substituteFontName = fontStyle
         allMeals = retrieveMeals()
         selMeals = []
@@ -111,6 +113,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let recipes = retrieveRecipe()
         var selectedMeal = StoredRecipe()
         for recipe in recipes{

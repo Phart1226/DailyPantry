@@ -29,11 +29,13 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         today = datePicker.date
         
         recipeLabel.text = (recipe.value(forKey: "name") as! String)
+        startObserving(&UIStyleManager.shared)
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         ingredientsTableView.reloadData()
+        startObserving(&UIStyleManager.shared)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,7 +56,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         
         cell.textLabel?.text = ingredientName
-        cell.detailTextLabel?.text = "\(qty): Available \(String(describing: available))"
+        cell.detailTextLabel?.text = "Required \(qty) : Available \(String(describing: available))"
     
 
         return cell

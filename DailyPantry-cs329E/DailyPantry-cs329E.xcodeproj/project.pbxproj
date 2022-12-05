@@ -19,6 +19,7 @@
 		84587C97293A852300D01599 /* DailyPantry_cs329E.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84587C95293A852200D01599 /* DailyPantry_cs329E.xcdatamodeld */; };
 		84587C99293A863700D01599 /* ut.png in Resources */ = {isa = PBXBuildFile; fileRef = 84587C98293A863700D01599 /* ut.png */; };
 		84587C9B293A888000D01599 /* AddToPantryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84587C9A293A888000D01599 /* AddToPantryViewController.swift */; };
+		84587C9D293E2C5D00D01599 /* CustomNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84587C9C293E2C5D00D01599 /* CustomNavController.swift */; };
 		84803808291B4AC500FC9152 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84803807291B4AC500FC9152 /* SettingsCell.swift */; };
 		8480380B291B4AD700FC9152 /* UserInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480380A291B4AD700FC9152 /* UserInfoHeader.swift */; };
 		8480380E291B4AEC00FC9152 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480380D291B4AEC00FC9152 /* SettingsViewController.swift */; };
@@ -40,8 +41,6 @@
 		BB0BB0AE292D97C600DF3725 /* StoredQty+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BB0AA292D97C600DF3725 /* StoredQty+CoreDataProperties.swift */; };
 		BB55CBB3293AA70600798CDB /* RecipeDate+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB55CBB1293AA70600798CDB /* RecipeDate+CoreDataClass.swift */; };
 		BB55CBB4293AA70600798CDB /* RecipeDate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB55CBB2293AA70600798CDB /* RecipeDate+CoreDataProperties.swift */; };
-		BB5844E6291472CB00FA3677 /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5844E5291472CB00FA3677 /* IngredientTableViewCell.swift */; };
-		BBB002D729108291004B23BD /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB002D629108291004B23BD /* Recipe.swift */; };
 		BBB002D92910904F004B23BD /* RecipeCatagoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB002D82910904F004B23BD /* RecipeCatagoriesViewController.swift */; };
 		BBB002DB291092D2004B23BD /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB002DA291092D2004B23BD /* RecipeViewController.swift */; };
 		BBB002DD291092F6004B23BD /* RecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB002DC291092F6004B23BD /* RecipeListViewController.swift */; };
@@ -58,6 +57,7 @@
 		84587C96293A852200D01599 /* DailyPantry_cs329E.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DailyPantry_cs329E.xcdatamodel; sourceTree = "<group>"; };
 		84587C98293A863700D01599 /* ut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ut.png; sourceTree = "<group>"; };
 		84587C9A293A888000D01599 /* AddToPantryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToPantryViewController.swift; sourceTree = "<group>"; };
+		84587C9C293E2C5D00D01599 /* CustomNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavController.swift; sourceTree = "<group>"; };
 		84803807291B4AC500FC9152 /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		8480380A291B4AD700FC9152 /* UserInfoHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoHeader.swift; sourceTree = "<group>"; };
 		8480380D291B4AEC00FC9152 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -84,8 +84,6 @@
 		BB0BB0AA292D97C600DF3725 /* StoredQty+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoredQty+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BB55CBB1293AA70600798CDB /* RecipeDate+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecipeDate+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BB55CBB2293AA70600798CDB /* RecipeDate+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecipeDate+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BB5844E5291472CB00FA3677 /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
-		BBB002D629108291004B23BD /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		BBB002D82910904F004B23BD /* RecipeCatagoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCatagoriesViewController.swift; sourceTree = "<group>"; };
 		BBB002DA291092D2004B23BD /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		BBB002DC291092F6004B23BD /* RecipeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +135,7 @@
 				84FAE1F428F9E6CA00BD4F64 /* LoginViewController.swift */,
 				84587C98293A863700D01599 /* ut.png */,
 				84188D982903394400F0BECD /* CalendarViewController.swift */,
+				84587C9C293E2C5D00D01599 /* CustomNavController.swift */,
 				84FAE1F628F9E6CA00BD4F64 /* Main.storyboard */,
 				84587C9A293A888000D01599 /* AddToPantryViewController.swift */,
 				84587C95293A852200D01599 /* DailyPantry_cs329E.xcdatamodeld */,
@@ -285,6 +284,7 @@
 				84FAE1F328F9E6CA00BD4F64 /* SceneDelegate.swift in Sources */,
 				84587C9B293A888000D01599 /* AddToPantryViewController.swift in Sources */,
 				BB0BB0A1292D685D00DF3725 /* StoredIngredient+CoreDataProperties.swift in Sources */,
+				84587C9D293E2C5D00D01599 /* CustomNavController.swift in Sources */,
 				84587C80293A733900D01599 /* WeakStyleObserver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

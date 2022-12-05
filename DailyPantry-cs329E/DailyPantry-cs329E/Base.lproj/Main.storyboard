@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DXf-NF-qEU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -12,7 +12,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="DailyPantry_cs329E" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="DailyPantry_cs329E" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,24 +51,23 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GC8-Ll-XwQ">
                                 <rect key="frame" x="195" y="533" width="38" height="30"/>
-                                <state key="normal" title="Login"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
+                                </state>
                                 <connections>
                                     <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YWq-Sx-2yl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m7S-X0-Ek1">
                                 <rect key="frame" x="151" y="634" width="126" height="30"/>
-                                <state key="normal" title="Create an account"/>
+                                <state key="normal" title="Create an account">
+                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                </state>
                                 <connections>
                                     <action selector="createAccountButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HiU-z8-E7c"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Pantry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guB-58-Ksh">
-                                <rect key="frame" x="168.66666666666666" y="82" width="90.999999999999972" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3G-kp-l6j">
                                 <rect key="frame" x="20" y="751" width="388" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -84,30 +83,33 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logo for app here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gZ-f8-enS">
-                                <rect key="frame" x="146.66666666666666" y="203" width="134.99999999999997" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Pantry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guB-58-Ksh">
+                                <rect key="frame" x="20" y="230" width="388" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="388" id="ve7-8V-WBh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <constraints>
+                            <constraint firstItem="GC8-Ll-XwQ" firstAttribute="top" secondItem="guB-58-Ksh" secondAttribute="bottom" constant="273" id="1qI-q2-OmR"/>
                             <constraint firstItem="m7S-X0-Ek1" firstAttribute="top" secondItem="GC8-Ll-XwQ" secondAttribute="bottom" constant="71" id="2Hb-Yd-xh5"/>
                             <constraint firstItem="GC8-Ll-XwQ" firstAttribute="leading" secondItem="Qbi-Pg-yJ4" secondAttribute="trailing" constant="78" id="5aZ-fr-wmY"/>
-                            <constraint firstItem="9gZ-f8-enS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Br-ea-5m2"/>
+                            <constraint firstItem="guB-58-Ksh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6y6-vS-Wdp"/>
                             <constraint firstItem="GC8-Ll-XwQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="489" id="6yy-KL-H2K"/>
-                            <constraint firstItem="GC8-Ll-XwQ" firstAttribute="top" secondItem="guB-58-Ksh" secondAttribute="bottom" constant="430" id="7fK-8G-Vkg"/>
                             <constraint firstItem="b21-Lq-nri" firstAttribute="leading" secondItem="Qbi-Pg-yJ4" secondAttribute="trailing" constant="17" id="AGk-py-rQq"/>
                             <constraint firstItem="ftt-Yl-fak" firstAttribute="leading" secondItem="GC8-Ll-XwQ" secondAttribute="trailing" constant="-99" id="CF7-zv-6ds"/>
                             <constraint firstItem="S3G-kp-l6j" firstAttribute="leading" secondItem="GC8-Ll-XwQ" secondAttribute="trailing" constant="-213" id="Jw7-bw-d5W"/>
                             <constraint firstItem="GC8-Ll-XwQ" firstAttribute="top" secondItem="Qbi-Pg-yJ4" secondAttribute="bottom" constant="80" id="L19-FV-A3e"/>
                             <constraint firstItem="guB-58-Ksh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ojb-jZ-vIy"/>
+                            <constraint firstItem="guB-58-Ksh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QMo-q6-Rwd"/>
                             <constraint firstItem="GC8-Ll-XwQ" firstAttribute="top" secondItem="b21-Lq-nri" secondAttribute="bottom" constant="74" id="VTT-9I-GlQ"/>
                             <constraint firstItem="GC8-Ll-XwQ" firstAttribute="top" secondItem="ftt-Yl-fak" secondAttribute="bottom" constant="128" id="aQ0-GP-P9h"/>
                             <constraint firstItem="GC8-Ll-XwQ" firstAttribute="top" secondItem="jpo-Dd-j68" secondAttribute="bottom" constant="134" id="dZB-N6-Vep"/>
-                            <constraint firstItem="GC8-Ll-XwQ" firstAttribute="top" secondItem="9gZ-f8-enS" secondAttribute="bottom" constant="309" id="e3R-JB-Miv"/>
                             <constraint firstItem="GC8-Ll-XwQ" firstAttribute="leading" secondItem="jpo-Dd-j68" secondAttribute="trailing" constant="78" id="f4e-aj-Emv"/>
                             <constraint firstItem="m7S-X0-Ek1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gbb-Yr-Bs9"/>
                             <constraint firstItem="S3G-kp-l6j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rEK-vA-Seo"/>
@@ -120,6 +122,7 @@
                         <outlet property="emailText" destination="ftt-Yl-fak" id="1e2-fM-Qyu"/>
                         <outlet property="errorLabel" destination="S3G-kp-l6j" id="Dnw-4W-3h0"/>
                         <outlet property="passwordText" destination="b21-Lq-nri" id="kGv-or-dbA"/>
+                        <outlet property="titleLabel" destination="guB-58-Ksh" id="99t-sK-VKF"/>
                         <segue destination="DXf-NF-qEU" kind="show" identifier="login" id="pdJ-gi-dyl"/>
                     </connections>
                 </viewController>
@@ -728,6 +731,9 @@
     <resources>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

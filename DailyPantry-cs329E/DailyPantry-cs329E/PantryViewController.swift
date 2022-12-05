@@ -27,11 +27,13 @@ class PantryViewController: UIViewController {
         UILabel.appearance().substituteFontName = fontStyle
         configureUI()
         getPantryItems()
+        startObserving(&UIStyleManager.shared)
 
     }
     override func viewWillAppear(_ animated: Bool) {
         getPantryItems()
         self.tableView.reloadData()
+        startObserving(&UIStyleManager.shared)
     }
 
     // MARK: - Helper Functions

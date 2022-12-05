@@ -19,11 +19,13 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
         UILabel.appearance().substituteFontName = fontStyle
         recipeListTableView.delegate = self
         recipeListTableView.dataSource = self
+        startObserving(&UIStyleManager.shared)
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         recipeListTableView.reloadData()
+        startObserving(&UIStyleManager.shared)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -18,6 +18,7 @@ class RecipeCatagoriesViewController: UIViewController, UITableViewDelegate, UIT
         UILabel.appearance().substituteFontName = fontStyle
         tableView.delegate = self
         tableView.dataSource = self
+        startObserving(&UIStyleManager.shared)
         // Do any additional setup after loading the view.
     }
     
