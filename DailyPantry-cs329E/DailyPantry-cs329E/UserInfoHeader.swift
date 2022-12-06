@@ -10,10 +10,8 @@ import CoreData
 
 class UserInfoHeader: UIView {
 
-
     // MARK: - Properties
     
-
     let profileImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
@@ -69,9 +67,6 @@ class UserInfoHeader: UIView {
             emailLabel.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 12).isActive = true
 
         }
-
-
-
 
     }
 

@@ -30,7 +30,6 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         recipeLabel.text = (recipe.value(forKey: "name") as! String)
         startObserving(&UIStyleManager.shared)
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,13 +53,10 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let qty = String((qtyArry[qtyIndex!] as! StoredQty).qty)
         let available = ingredient.value(forKey: "amountAvailable")!
         
-        
         cell.textLabel?.text = ingredientName
         cell.detailTextLabel?.text = "Required \(qty) : Available \(String(describing: available))"
     
-
         return cell
-        
     }
 
     @IBAction func datePickerValueChanged(_ sender: Any) {
@@ -91,13 +87,13 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 return
             }
         }
-
-        
+   
         if date >= today {
             
             let formatter = DateFormatter()
             formatter.dateFormat = "dd-MMM-yyyy"
             let formattedDate = formatter.string(from: date)
+            let recipeName = (recipe.value(forKey: "name") as! String)
             
             let dates = retrieveDates()
             
@@ -132,6 +128,8 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
             
             saveContext()
+            
+            notify(recipeName: recipeName, date: formattedDate)
             
             ingredientsTableView.reloadData()
         }
@@ -188,8 +186,19 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
     }
-
-
+    
+    func notify(recipeName: String, date: String) {
+        let content = UNMutableNotificationContent()
+        content.title = "You've added a recipe!"
+        content.subtitle = "You added \(recipeName) to \(date)!"
+        content.body = "\(recipeName) will now appear on your calendar!"
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 8.0 , repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "recipeNotification", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request)
+    }
 }
 
 extension NSManagedObject {
