@@ -1,5 +1,7 @@
 Name of project: Daily Pantry
+
 Team members: Hamza Elsiesy, Preston Hart, Johathan Abdo
+
 Dependencies: Xcode 10.2, Swift 5, Firebase IOS SDK, CalenderKit, FSCalender
  
 Special Instructions:
