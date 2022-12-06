@@ -7,7 +7,6 @@ protocol UIStyleObserver: AnyObject {
     func fancyFontManager()
 }
 
-
 extension UIViewController: UIStyleObserver {
     
     func startObserving(_ uiStyleManager: inout UIStyleManager) {

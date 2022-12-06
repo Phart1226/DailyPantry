@@ -28,15 +28,15 @@ class LoginViewController: UIViewController {
         passwordText.isSecureTextEntry = true
 
         startObserving(&UIStyleManager.shared)
-
-//        Auth.auth().addStateDidChangeListener() {
-//            auth, user in
-//            if user != nil {
-//                self.performSegue(withIdentifier: "loginSegue", sender: nil)
-//                self.emailText.text = nil
-//                self.passwordText.text = nil
-//            }
-//        }
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.badge, .sound]) {
+            granted, error in
+            if granted {
+                print("All set")
+            } else if let error = error {
+                print(error)
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
