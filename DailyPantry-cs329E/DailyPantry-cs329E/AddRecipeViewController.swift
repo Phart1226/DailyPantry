@@ -82,6 +82,28 @@ class AddRecipeViewController: UIViewController, UITableViewDelegate, UITableVie
             recipe.qty = NSSet(array: qtyArray)
             
             saveContext()
+            
+            // spin table view 360 degrees
+            var durationValue = 1.0
+            
+            UIView.animate(
+                withDuration: durationValue,
+                animations: {
+                    // 180 degree rotation
+                    self.addTableView.transform =
+                    self.addTableView.transform.rotated(by: CGFloat(Double.pi))
+                    }
+            )
+            
+            UIView.animate(
+                withDuration: durationValue,
+                animations: {
+                    // 180 degree rotation
+                    self.addTableView.transform =
+                    self.addTableView.transform.rotated(by: CGFloat(Double.pi))
+                    }
+            )
+            
         } else {
             var missing: String
             if recipeName.text == "" {
@@ -168,8 +190,6 @@ class AddRecipeViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         
     }
-
-    
 }
 
 extension AddRecipeViewController: IngredientTableViewCellDelegate {
@@ -179,6 +199,5 @@ extension AddRecipeViewController: IngredientTableViewCellDelegate {
             addedQty.append(qty)
             addedTableView.reloadData()
         }
-        
     }
 }

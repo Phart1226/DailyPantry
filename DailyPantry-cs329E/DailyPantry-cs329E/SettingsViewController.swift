@@ -117,9 +117,6 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource, UI
         if cell.sectionType!.description == "Dark Mode"{
             cell.switchControl.isOn = UIStyleManager.shared.currentStyle == .dark
         }
-
-
-
         return cell
     }
 
@@ -132,13 +129,59 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource, UI
             // add functionality to edit profile and logout
             switch indexPath.row {
             case 0:
-                if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-                        imagePicker.delegate = self
-                        imagePicker.sourceType = .photoLibrary
-                        imagePicker.allowsEditing = false
-                        present(imagePicker, animated: true)
-                    }
-                // update table view
+                let controller = UIAlertController(
+                    title: "Change Profile Picture",
+                    message: "Select from Photo Library or take photo",
+                    preferredStyle: .alert)
+                
+                controller.addAction(UIAlertAction(
+                    title: "Photo Library",
+                    style: .default,
+                    handler: { (paramAction:UIAlertAction!) in
+                        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+                            self.imagePicker.delegate = self
+                            self.imagePicker.sourceType = .photoLibrary
+                            self.imagePicker.allowsEditing = false
+                            self.present(self.imagePicker, animated: true)
+                            }
+                    }))
+                controller.addAction(UIAlertAction(
+                    title: "Camera",
+                    style: .default,
+                    handler: { (paramAction:UIAlertAction!) in
+                        if UIImagePickerController.availableCaptureModes(for: .rear) != nil {
+                            switch AVCaptureDevice.authorizationStatus(for: .video){
+                            case .notDetermined:
+                                AVCaptureDevice.requestAccess(for: .video){
+                                    accessGranted in
+                                    guard accessGranted == true else { return }
+                                }
+                            case .authorized:
+                                break
+                            default:
+                                print("Access Denied")
+                                return
+                            }
+                            self.imagePicker.delegate = self
+                            self.imagePicker.sourceType = .camera
+                            self.imagePicker.allowsEditing = false
+                            self.imagePicker.cameraCaptureMode = .photo
+                            self.present(self.imagePicker, animated: true, completion: nil)
+                        }
+                        else{
+                            let alertVC = UIAlertController(
+                                title: "No Camera",
+                                message: "Sorry, this device has no rear camera",
+                                preferredStyle: .alert)
+                            let okAction = UIAlertAction(
+                                title: "OK",
+                                style: .default)
+                            alertVC.addAction(okAction)
+                            self.present(alertVC, animated: true)
+                        }
+                    }))
+                    present(controller, animated: true)
+                    
             case 1:
                 let controller = UIAlertController(
                     title: "Change Display Name",
@@ -170,8 +213,6 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource, UI
                         self.viewWillAppear(false)
                         
                         self.tableView.reloadData()
-                        
-                        
                     }
                 }))
                 present(controller, animated: true)
@@ -284,7 +325,9 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource, UI
         user.setValue(image.jpegData(compressionQuality: 1.0), forKey: "profilePic")
         saveContext()
         dismiss(animated: true)
-            
+        let frame = CGRect(x: 0, y: 88, width: view.frame.width, height: 100)
+        userInfoHeader = UserInfoHeader(frame: frame)
+        tableView.tableHeaderView = userInfoHeader
         picker.dismiss(animated: true, completion: nil)
     }
     
@@ -295,7 +338,9 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource, UI
     func cleanoutData(sheet: String) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: sheet)
+        
+        // clear recipes
+        var request = NSFetchRequest<NSFetchRequestResult>(entityName: "StoredRecipe")
         var fetchedResults:[NSManagedObject]
 
         do {
@@ -321,8 +366,54 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource, UI
             NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
             abort()
         }
+        saveContext()
         
-        // add in clear data for Recipe Date and Ingredients
+        // clear RecipeDates
+        request = NSFetchRequest<NSFetchRequestResult>(entityName: "RecipeDate")
+        fetchedResults = []
+
+        do {
+            try fetchedResults = context.fetch(request) as! [NSManagedObject]
+
+            if fetchedResults.count > 0 {
+                for result:AnyObject in fetchedResults {
+                    context.delete(result as! NSManagedObject)
+                }
+            }
+            if context.hasChanges {
+                do {
+                    try context.save()
+                } catch {
+                    let nserror = error as NSError
+                    NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+                }
+            }
+
+        } catch {
+            // if an error occurs
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+        saveContext()
+        
+        // clear Ingredients
+        request = NSFetchRequest<NSFetchRequestResult>(entityName: "StoredIngredient")
+        fetchedResults = []
+        do {
+            try fetchedResults = (context.fetch(request) as? [NSManagedObject])!
+        } catch {
+            // if an error occurs
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+        
+        for item in fetchedResults{
+            item.setValue(0, forKey: "amountAvailable")
+        }
+        
+        saveContext()
     }
     
     func setUser() -> NSManagedObject {

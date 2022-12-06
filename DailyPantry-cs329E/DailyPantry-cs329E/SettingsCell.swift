@@ -80,5 +80,4 @@ class SettingsCell: UITableViewCell {
             print("turned off")
         }
     }
-
 }
